@@ -1,0 +1,399 @@
+{
+    "Tower_Banana_Entry": {
+    "action": "DoNothing",
+    "next": ["tower_banana_过渡"]      
+    },
+    "tower_banana_识别开始战斗": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "timeout":-1,
+    "next": ["tower_banana_判断是否进入关内"]
+    },
+    "tower_banana_判断是否进入关内": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": -1,
+    "action": "Click",
+    "target": [1757,56],
+    "next": ["tower_banana_抛花1"]
+    },
+    "tower_banana_抛花1": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [829,718],
+    "pre_delay": 0,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["tower_banana_过渡1"]
+    },
+    // "tower_banana_抛花2": {
+    // "action": "swipe",
+    // "begin": [100,200],
+    // "end": [832,883],
+    // "pre_delay": 0,
+    // "post_delay": 0,
+    // "duration": 100,
+    // "timeout": -1,
+    // "next": ["tower_banana_过渡1"]
+    // },
+    "tower_banana_过渡1": {
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": ["tower_banana_检查1","tower_banana_检查2","tower_banana_前期"]
+    },
+    
+    "tower_banana_检查1": {
+    "recognition": "colormatch",
+    "lower": [237, 225, 163],
+    "upper": [255, 245, 183],
+    "roi":[712,861,17,13],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_后期"]
+    },
+    "tower_banana_检查2": {
+    "recognition": "TemplateMatch",
+    "template": "Tower_Banana/瓷砖.png",
+    "roi":[913,338,123,113],
+    "threshold":0.7,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_香蕉5"]
+    },
+    "tower_banana_香蕉5": {
+    "action": "swipe",
+    "begin": [100,300],
+    "end": [685,883],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_种塔黄3"]
+    },
+    "tower_banana_种塔黄3": {
+    "action": "swipe",
+    "begin": [100,400],
+    "end": [975,390],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_过渡1"]
+    },
+    
+    "tower_banana_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "action": "Click",
+    "rate_limit": 1000,
+    "timeout": -1,
+    "next": ["tower_banana_过渡"]
+    },
+    "tower_banana_过渡": {
+    "action": "DoNothing",
+    "timeout": -1,
+    "next": ["tower_banana_识别开始战斗","tower_banana_识别boss关"]
+    },
+
+    "tower_banana_识别boss关": {
+    "recognition": "ColorMatch",
+    "lower":[146, 213, 6],
+    "upper":[166, 233, 26],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "next": ["tower_banana_补给"]
+    },
+     "tower_banana_补给": {
+    "recognition": "ColorMatch",
+    "lower":[146, 213, 6],
+    "upper":[166, 233, 26],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "action": "Click",
+    "target": [392,562],
+    "next": ["tower_banana_确定1"]
+    },
+    "tower_banana_确定1": {
+    "action": "Click",
+    "target": [950,921],
+    "next": ["tower_banana_提示","tower_banana_确定3"]
+    },
+    "tower_banana_提示": {
+    "recognition":"OCR",
+    "expected": "提示",
+    "roi": [843,363,142,74],
+    "action": "Click",
+    "target": [892,789],
+    "next": ["tower_banana_确定3"]
+    },
+    "tower_banana_确定3": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["tower_banana_确定4"]
+    },
+    "tower_banana_确定4": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["tower_banana_boss_识别开始"]
+    },
+    "tower_banana_boss_识别开始": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "next": ["tower_banana_boss_判断是否进入关内"]
+    },
+    "tower_banana_boss_判断是否进入关内": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": -1,
+    "action": "Click",
+    "target": [1757,56],
+    "next": ["tower_banana_boss_喂豆胆小姑"]
+    },
+    
+    "tower_banana_boss_喂豆胆小姑": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1260,552],
+    "pre_delay": 100,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_boss_种胆小姑1"]
+    },
+    "tower_banana_boss_种胆小姑1": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1120,716],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种胆小姑2"]
+    },
+    "tower_banana_boss_种胆小姑2": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1120,550],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种胆小姑3"]
+    },
+    "tower_banana_boss_种胆小姑3": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1120,388],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种胆小姑4"]
+    },
+    "tower_banana_boss_种胆小姑4": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1257,712],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种胆小姑5"]
+    },
+    "tower_banana_boss_种胆小姑5": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1260,541],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种胆小姑6"]
+    },
+    "tower_banana_boss_种胆小姑6": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1257,379],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种胆小姑7"]
+    },
+    "tower_banana_boss_种胆小姑7": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1396,706],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种胆小姑8"]
+    },
+    "tower_banana_boss_种胆小姑8": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1399,543],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种胆小姑9"]
+    },
+    "tower_banana_boss_种胆小姑9": {
+    "action": "swipe",
+    "begin": [100,900],
+    "end": [1395,377],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖1"]
+    },
+    "tower_banana_boss_种瓷砖1": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [701,878],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖2"]
+    },
+    "tower_banana_boss_种瓷砖2": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [695,716],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖3"]
+    },
+    "tower_banana_boss_种瓷砖3": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [698,550],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖4"]
+    },
+    "tower_banana_boss_种瓷砖4": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [702,385],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖5"]
+    },
+    "tower_banana_boss_种瓷砖5": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [705,236],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖6"]
+    },
+    "tower_banana_boss_种瓷砖6": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [975,874],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖7"]
+    },
+    "tower_banana_boss_种瓷砖7": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [973,721],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖8"]
+    },
+    "tower_banana_boss_种瓷砖8": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [967,553],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_种瓷砖9"]
+    },
+    "tower_banana_boss_种瓷砖9": {
+    "action": "swipe",
+    "begin": [100,800],
+    "end": [972,392],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_抛花1"]
+    },
+    "tower_banana_boss_抛花1": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [826,878],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_抛花2"]
+    },
+    "tower_banana_boss_抛花2": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [831,221],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_抛花3"]
+    },
+    "tower_banana_boss_抛花3": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [837,390],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_抛花4"]
+    },
+    "tower_banana_boss_抛花4": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [830,710],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["tower_banana_boss_喂豆胆小姑2"]
+    },
+    "tower_banana_boss_喂豆胆小姑2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1260,552],
+    "pre_delay": 4000,
+    "post_delay": 0,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["tower_banana_boss_识别结算","tower_banana_boss_喂豆胆小姑2"]
+    },
+    
+    "tower_banana_boss_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "timeout":-1,
+    "rate_limit": 500,
+    "action": "Click",
+    "next": ["tower_banana_识别开始战斗"]
+    }
+
+}

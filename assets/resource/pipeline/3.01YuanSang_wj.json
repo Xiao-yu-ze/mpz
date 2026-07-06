@@ -1,0 +1,861 @@
+{
+    "Yd_Wj_Entry": {
+    "action": "DoNothing",
+    "next": ["yd_wj_过渡"]      
+    },
+    "yd_wj_识别开始战斗": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "timeout":-1,
+    "next": ["yd_wj_判断是否进入关内"]
+    },
+    "yd_wj_判断是否进入关内": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": -1,
+    "action": "Click",
+    "target": [1757,56],
+    "next": ["yd_wj_抛花1"]
+    },
+    "yd_wj_抛花1": {
+    "action": "swipe",
+    "begin": "卡槽1",
+    "end": "9-1",
+    "pre_delay": 0,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["yd_wj_抛花2"]
+    },
+    "yd_wj_抛花2": {
+    "action": "swipe",
+    "begin": "卡槽1",
+    "end": "9-2",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "timeout": -1,
+    "next": ["yd_wj_捡花1"]
+    },
+    "yd_wj_捡花1": {
+    "action": "swipe",
+    "begin": [1801,182],
+    "end": [1808,464],
+    "repeat":50,
+    "repeat_delay": 0,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 5,
+    "timeout": -1,
+    "next": ["yd_wj_点波1"]
+    },
+    "yd_wj_点波1": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1853, 325],
+        "repeat": 2,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_大哥滑动1"]
+    },
+    "yd_wj_大哥滑动1": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽3",
+        "end": "1-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_大哥滑动2"]
+    },
+    "yd_wj_大哥滑动2": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽3",
+        "end": "1-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_大哥滑动3"]
+    },
+    "yd_wj_大哥滑动3": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽3",
+        "end": "1-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_原豌滑动1"]
+    },
+   
+    "yd_wj_原豌滑动1": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽5",
+        "end": "1-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_原豌滑动2"]
+    },
+    "yd_wj_原豌滑动2": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽5",
+        "end": "1-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_原豌滑动3"]
+    },
+    "yd_wj_原豌滑动3": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽5",
+        "end": "1-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_大哥滑动4","yd_wj_点波2"]
+    },
+     "yd_wj_大哥滑动4": {
+        "recognition": "ColorMatch",
+        "roi": [172,375,10,67],
+        "lower":[250, 140, 0],
+        "upper":[255, 167, 18],
+        "action": "Swipe",
+        "begin": "卡槽3",
+        "end": "1-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_原豌滑动4"]
+    },
+    "yd_wj_原豌滑动4": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽5",
+        "end": "1-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_大哥滑动5","yd_wj_点波2"]
+    },
+    "yd_wj_大哥滑动5": {
+        "recognition": "ColorMatch",
+        "roi": [172,375,10,67],
+        "lower":[250, 140, 0],
+        "upper":[255, 167, 18],
+        "action": "Swipe",
+        "begin": "卡槽3",
+        "end": "1-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_原豌滑动5"]
+    },
+    
+    "yd_wj_原豌滑动5": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽5",
+        "end": "1-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_点波2"]
+    },
+    "yd_wj_点波2": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1853, 325],
+        "repeat": 2,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_识别结算","yd_wj_自选滑动"]
+    },
+    "yd_wj_自选滑动": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽7",
+        "end": "5-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_芦荟滑动1"]
+    },
+    "yd_wj_芦荟滑动1": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽6",
+        "end": "3-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_芦荟滑动2"]
+    },
+    "yd_wj_芦荟滑动2": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽6",
+        "end": "3-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_芦荟滑动3"]
+    },
+    "yd_wj_芦荟滑动3": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽6",
+        "end": "6-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_芦荟滑动4"]
+    },
+    "yd_wj_芦荟滑动4": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽6",
+        "end": "6-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动1"]
+    },
+    "yd_wj_桑葚滑动1": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "2-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动2"]
+    },
+    "yd_wj_桑葚滑动2": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "2-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_识别结算","yd_wj_桑葚滑动3"]
+    },
+    "yd_wj_桑葚滑动3": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "2-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动4"]
+    },
+    "yd_wj_桑葚滑动4": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "2-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动5"]
+    },
+    "yd_wj_桑葚滑动5": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "2-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动6"]
+    },
+    "yd_wj_桑葚滑动6": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "3-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动7"]
+    },
+    "yd_wj_桑葚滑动7": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "3-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动8"]
+    },
+    "yd_wj_桑葚滑动8": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "3-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动9"]
+    },
+    "yd_wj_桑葚滑动9": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "4-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动10"]
+    },
+    "yd_wj_桑葚滑动10": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "4-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动11"]
+    },
+    "yd_wj_桑葚滑动11": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "4-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动12"]
+    },
+    "yd_wj_桑葚滑动12": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "4-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_识别结算","yd_wj_桑葚滑动13"]
+    },
+    "yd_wj_桑葚滑动13": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "4-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动14"]
+    },
+    "yd_wj_桑葚滑动14": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "5-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动15"]
+    },
+    "yd_wj_桑葚滑动15": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "5-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动16"]
+    },
+    "yd_wj_桑葚滑动16": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "5-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动17"]
+    },
+    "yd_wj_桑葚滑动17": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "5-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动18"]
+    },
+    "yd_wj_桑葚滑动18": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "5-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动19"]
+    },
+    "yd_wj_桑葚滑动19": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "6-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动20"]
+    },
+    "yd_wj_桑葚滑动20": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "6-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动21"]
+    },
+    "yd_wj_桑葚滑动21": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "6-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动22"]
+    },
+    "yd_wj_桑葚滑动22": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "7-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_识别结算","yd_wj_桑葚滑动23"]
+    },
+    "yd_wj_桑葚滑动23": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "7-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动24"]
+    },
+    "yd_wj_桑葚滑动24": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "7-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动25"]
+    },
+    "yd_wj_桑葚滑动25": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "7-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_桑葚滑动26"]
+    },
+    "yd_wj_桑葚滑动26": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽2",
+        "end": "7-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动1"]
+    },
+    "yd_wj_毒藤滑动1": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "2-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动2"]
+    },
+    "yd_wj_毒藤滑动2": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "2-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动3"]
+    },
+    "yd_wj_毒藤滑动3": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "2-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动4"]
+    },
+    "yd_wj_毒藤滑动4": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "2-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_识别结算","yd_wj_毒藤滑动5"]
+    },
+    "yd_wj_毒藤滑动5": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "2-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动6"]
+    },
+    "yd_wj_毒藤滑动6": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "3-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动7"]
+    },
+    "yd_wj_毒藤滑动7": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "3-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动8"]
+    },
+    "yd_wj_毒藤滑动8": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "3-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动9"]
+    },
+    "yd_wj_毒藤滑动9": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "4-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动10"]
+    },
+    "yd_wj_毒藤滑动10": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "4-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动11"]
+    },
+    "yd_wj_毒藤滑动11": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "4-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动12"]
+    },
+    "yd_wj_毒藤滑动12": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "4-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动13"]
+    },
+    "yd_wj_毒藤滑动13": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "4-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动14"]
+    },
+    "yd_wj_毒藤滑动14": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "5-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_识别结算","yd_wj_毒藤滑动15"]
+    },
+    "yd_wj_毒藤滑动15": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "5-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动16"]
+    },
+    "yd_wj_毒藤滑动16": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "5-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动17"]
+    },
+    "yd_wj_毒藤滑动17": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "5-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动18"]
+    },
+    "yd_wj_毒藤滑动18": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "5-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动19"]
+    },
+    "yd_wj_毒藤滑动19": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "6-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动20"]
+    },
+    "yd_wj_毒藤滑动20": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "6-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动21"]
+    },
+    "yd_wj_毒藤滑动21": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "6-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动22"]
+    },
+    "yd_wj_毒藤滑动22": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "7-1",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动23"]
+    },
+    "yd_wj_毒藤滑动23": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "7-2",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动24"]
+    },
+    "yd_wj_毒藤滑动24": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "7-3",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动25"]
+    },
+    "yd_wj_毒藤滑动25": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "7-4",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_毒藤滑动26"]
+    },
+    "yd_wj_毒藤滑动26": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": "卡槽4",
+        "end": "7-5",
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_点波5"]
+    },
+    "yd_wj_点波5": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [1853, 325],
+        "repeat": 2,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": ["yd_wj_识别结算","yd_wj_识别开始战斗","yd_wj_识别boss关","yd_wj_点波1"]
+    },
+    "yd_wj_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "action": "Click",
+    "rate_limit": 1000,
+    "timeout": -1,
+    "next": ["yd_wj_过渡"]
+    },
+    "yd_wj_过渡": {
+    "action": "DoNothing",
+    "timeout": -1,
+    "next": ["yd_wj_识别开始战斗","yd_wj_识别boss关"]
+    },
+
+    "yd_wj_识别boss关": {
+    "recognition": "ColorMatch",
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "next": ["yd_wj_补给"]
+    },
+     "yd_wj_补给": {
+    "recognition": "ColorMatch",
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "action": "Click",
+    "target": [392,562],
+    "next": ["yd_wj_确定1"]
+    },
+    "yd_wj_确定1": {
+    "action": "Click",
+    "target": [950,921],
+    "next": ["yd_wj_提示","yd_wj_确定3"]
+    },
+    "yd_wj_提示": {
+    "recognition":"OCR",
+    "expected": "提示",
+    "roi": [843,363,142,74],
+    "action": "Click",
+    "target": [892,789],
+    "next": ["yd_wj_确定3"]
+    },
+    "yd_wj_确定3": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["yd_wj_确定4"]
+    },
+    "yd_wj_确定4": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["yd_wj_boss_识别开始"]
+    },
+    "yd_wj_boss_识别开始": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "next": ["yd_wj_boss_判断是否进入关内"]
+    },
+    "yd_wj_boss_判断是否进入关内": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": -1,
+    "action": "Click",
+    "target": [1757,56],
+    "next": ["yd_wj_boss_喂豆5-3"]
+    },
+    "yd_wj_boss_喂豆5-3": {
+    "action": "swipe",
+    "begin": "豆槽",
+    "end": "5-3",
+    "pre_delay": 100,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["yd_wj_boss_识别结算","yd_wj_boss_喂豆5-3"]
+    },
+    "yd_wj_boss_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "timeout":-1,
+    "rate_limit": 500,
+    "action": "Click",
+    "next": ["yd_wj_识别开始战斗"]
+    }
+}

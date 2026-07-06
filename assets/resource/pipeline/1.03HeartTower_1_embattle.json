@@ -1,0 +1,163 @@
+{
+    "1关": {
+    "action": "DoNothing",
+    "next": ["xinta1_识别开始战斗"]      
+    },
+
+    "xinta1_识别开始战斗": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "target": [1149,590],
+    "next": [ "点击配队1" ]
+    },
+    "点击配队1":{
+    "action": "Click",
+    "target":[292,327],
+    "next" :["xinta1_点击开始游戏"]
+    },
+    "xinta1_点击开始游戏": {
+    "action": "Click",
+    "target": [1709,1006],
+    "next": ["种蓓蕾"]
+    },
+    "种蓓蕾": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": 10000,
+    "action": "Swipe",
+    "begin": [104,500],
+    "end": [703,221], 
+    "duration": 100,
+    "next": ["种蓓蕾2"]
+    },
+    "种蓓蕾2": {
+    "action": "Swipe",
+    "begin": [104,500],
+    "end": [848,239],
+    "duration": 100,
+    "next": ["种蓓蕾3"]
+    },
+    "种蓓蕾3": {
+    "action": "Swipe",
+    "begin": [104,500],
+    "end": [985,216],
+    "duration": 100,
+    "next": ["种香蕉1"]
+    },
+    "种香蕉1": {
+    "action": "Swipe",
+    "begin": [104,200],
+    "end": [705,555],
+    "duration": 100,
+    "next": ["种香蕉2"]
+    },
+    "种香蕉2": {
+    "action": "Swipe",
+    "begin": [104,200],
+    "end": [989,555],
+    "duration": 100,
+    "next": ["种木槿"]
+    },
+    "种木槿": {
+    "action": "Swipe",
+    "begin": [104,900],
+    "end": [842,555],
+    "duration": 100,
+    "next": ["种牛蒡"]
+    },
+    "种牛蒡": {
+    "action": "Swipe",
+    "begin": [104,800],
+    "end": [1116,538],
+    "duration": 100,
+    "next": ["球果1"]
+    },
+    "球果1":{
+    "action": "Click",
+    "target":[246,391],
+    "next" :["球果2"]
+    },
+    "球果2":{
+    "action": "Click",
+    "target":[246,391],
+    "next" :["种球果"]
+    },
+    "种球果": {
+    "action": "Swipe",
+    "begin": [104,400],
+    "end": [708,381],
+    "duration": 100,
+    "next": ["种豆藤"]
+    },
+    "种豆藤": {
+    "action": "Swipe",
+    "begin": [104,300],
+    "end": [838,545],
+    "duration": 100,
+    "next": ["种大哥1"]
+    },
+    "种大哥1": {
+    "action": "Swipe",
+    "begin": [104,700],
+    "end": [1116,390],
+    "duration": 100,
+    "next": ["种大哥2"]
+    },
+    "种大哥2": {
+    "action": "Swipe",
+    "begin": [104,700],
+    "end": [1124,722],
+    "duration": 100,
+    "next": ["xinta1_点波"]
+    },
+    "xinta1_点波":{
+    "action": "Click",
+    "target":[1838,328],
+    "max_hit": 20,
+    "post_delay": 10,
+    "pre_delay": 10,
+    "next" :["xinta1_点波","xinta1_点葫芦"]
+    },
+    "xinta1_点葫芦": {
+    "action": "Click",
+    "target": [1129,1005],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": ["xinta1_开葫芦"]
+    },
+    "xinta1_开葫芦": {
+    "action": "Click",
+    "target": [1001,851],
+    "pre_delay": 200,
+    "post_delay": 200,
+    "next": ["种电豌1"]
+    },
+    "种电豌1": {
+    "action": "Swipe",
+    "begin": [104,600],
+    "end": [1116,390],
+    "duration": 100,
+    "next": ["种电豌2"]
+    },
+    "种电豌2": {
+    "action": "Swipe",
+    "begin": [104,600],
+    "end": [1124,722],
+    "duration": 100,
+    "next": ["xinta1_识别结算"]
+    },
+    "xinta1_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "action": "Click",
+    "next": ["2关"]
+    }
+
+}

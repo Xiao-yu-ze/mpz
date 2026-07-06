@@ -1,0 +1,29 @@
+{
+    "option":{
+        "小关是否加速":{
+            "type":"switch",
+            "label":"小关是否加速",
+            "cases":[
+            {
+                "name":"No",
+                "label":"否",
+                "pipeline_override":{
+                    "frame_wj_判断是否进入关内":{
+                        "action":"DoNothing"
+                    }
+                }
+            },
+            {
+                "name":"Yes",
+                "label":"是",
+                "pipeline_override":{
+                    "frame_wj_判断是否进入关内":{
+                        "action":"click"
+                    }
+                }
+            }  
+            ]
+
+        }
+    }
+}

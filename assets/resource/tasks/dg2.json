@@ -1,0 +1,11 @@
+{
+    "task": [
+    
+        {
+            "name": "地宫无尽2",
+            "entry": "地宫2",
+            "default_check": false,
+            "description": "卡槽要带对,每行都要有一个双发了再在选卡界面开脚本,无需月卡"
+        }
+    ]
+}

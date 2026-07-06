@@ -1,0 +1,144 @@
+{
+    "tower_banana_前期":{
+    "action":"DoNothing",
+    "next":["tower_banana_香蕉1"]
+    },
+    "tower_banana_香蕉1": {
+    "action": "swipe",
+    "begin": [100,300],
+    "end": [688,208],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_香蕉2"]
+    },
+    "tower_banana_香蕉2": {
+    "action": "swipe",
+    "begin": [100,300],
+    "end": [689,376],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_香蕉3"]
+    },
+    "tower_banana_香蕉3": {
+    "action": "swipe",
+    "begin": [100,300],
+    "end": [685,542],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_香蕉4"]
+    },
+    "tower_banana_香蕉4": {
+    "action": "swipe",
+    "begin": [100,300],
+    "end": [686,714],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_种气流"]
+    },
+    
+    "tower_banana_种气流": {
+    "action": "swipe",
+    "begin": [100,700],
+    "end": [989,533],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_种塔黄1"]
+    },
+    "tower_banana_种塔黄1": {
+    "action": "swipe",
+    "begin": [100,400],
+    "end": [972,713],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_种塔黄2"]
+    },
+    "tower_banana_种塔黄2": {
+    "action": "swipe",
+    "begin": [100,400],
+    "end": [975,874],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_种大哥"]
+    },
+    
+    
+    "tower_banana_种大哥": {
+    "action": "swipe",
+    "begin": [100,500],
+    "end": [829,540],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_种电大"]
+    },
+    "tower_banana_种电大": {
+    "action": "swipe",
+    "begin": [100,600],
+    "end": [829,540],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_喂豆电大"]
+    },
+    "tower_banana_喂豆电大": {
+    "action": "swipe",
+    "begin": [723,1020],
+    "end": [829,540],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["tower_banana_点波1"]
+    },
+    "tower_banana_点波1": {
+    "action": "click",
+    "target": [1837,325],
+    "repeat": 35,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "repeat_delay": 0,
+    "duration": 1,
+    "next": ["tower_banana_识别结算","tower_banana_划飞弹1"]
+    },
+    // "tower_banana_检查3": {
+    // "action":"click",
+    // "recognition": "colormatch",
+    // "lower": [93, 74, 3],
+    // "upper": [99, 90, 24],
+    // "roi":[1736,31,54,55],
+    // "pre_delay": 0,
+    // "post_delay": 0,
+    // "next": ["tower_banana_划飞弹1"]
+    // },
+    // "tower_banana_点葫芦": {
+    // "action": "Click",
+    // "target": [1129,1005],
+    // "pre_delay": 0,
+    // "post_delay": 0,
+    // "next": ["tower_banana_开葫芦"]
+    // },
+    // "tower_banana_开葫芦": {
+    // "action": "Click",
+    // "target": [994,853],
+    // "pre_delay": 0,
+    // "post_delay": 250,
+    // "next": ["tower_banana_划飞弹1"]
+    // },
+    "tower_banana_划飞弹1": {
+    "action": "swipe",
+    "begin": [1360,649],
+    "end": [1744,685],
+    "repeat": 250,
+    "pre_delay": 0,
+    "repeat_delay": 0,
+    "post_delay": 0,
+    "duration": 1,
+    "next": ["tower_banana_识别结算","tower_banana_喂豆电大"]
+    }
+}

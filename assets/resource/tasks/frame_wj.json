@@ -1,0 +1,618 @@
+{
+"task": [
+        {
+            "name": "无尽挂机脚本框架",
+            "entry": "Frame_Wj_Entry",
+            "description": "脚本只负责点开始游戏,继续挑战,加速,补给等操作,可以摆自己设计的挂机阵,脚本默认开启划飞弹和点波,布好阵了在开脚本,不然种不了植物(详细的功能介绍见公告:设置->关于我们->显示公告)",
+            "option": [
+                "小关是否喂豆",
+                "全局是否抛花",
+                "fw_boss关是否需要喂豆",
+                "是否需要补植物",
+                "是否需要点波",
+                "小关是否加速",
+                "fw_boss关是否加速",
+                "fw_boss_补给智能选取",
+                "fw_boss_是否开相机神器",
+                "是否魔甘收尾(牢玩家专属)"
+            ]
+        }
+    ],
+"option":{
+    "是否魔甘收尾(牢玩家专属)": {
+            "type": "switch",
+            "label": "是否魔甘收尾(牢玩家专属)",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                    
+                },
+                {
+                    "name":"Yes",
+                    "label":"是",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹":{
+                            "next":["判断是否魔甘收尾"]
+                        }
+                    }
+                }
+                
+            ]
+    },
+    "fw_boss_是否开相机神器": {
+            "type": "switch",
+            "label": "boss关是否开相机神器复原植物",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡_相机神器1":{
+                            "next":["frame_wj_boss_过渡"]
+                        }
+                    }
+                },
+                {
+                    "name":"Yes",
+                    "label":"是",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡_相机神器1":{
+                            "next":["frame_wj_boss_相机神器_复制1"]
+                        },
+                        "frame_wj_boss_喂豆5-3":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆5-3"]
+                        },
+                        "frame_wj_boss_喂豆4-3":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆4-3"]
+                        },
+                        "frame_wj_boss_喂豆3-3":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆3-3"]
+                        },
+                        "frame_wj_boss_喂豆2-3":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆2-3"]
+                        },
+                        "frame_wj_boss_喂豆1-3":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆1-3"]
+                        },
+                        "frame_wj_boss_喂豆6-2":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆6-2"]
+                        },
+                        "frame_wj_boss_喂豆5-2":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆5-2"]
+                        },
+                        "frame_wj_boss_喂豆4-2":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆4-2"]
+                        },
+                        "frame_wj_boss_喂豆6-4":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆6-4"]
+                        },
+                        "frame_wj_boss_喂豆5-4":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆5-4"]
+                        },
+                        "frame_wj_boss_喂豆4-4":{
+                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆4-4"]
+                        }
+                    }
+                }
+                
+            ]
+        },
+        "fw_boss_补给智能选取": {
+            "type": "switch",
+            "label": "补给智能选取",
+            "description":"优先级: 神器->全部植物->橙色植物->蓝色植物->紫色植物",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name":"Yes",
+                    "label":"是",
+                    "pipeline_override": {
+                        "frame_wj_识别boss关":{
+                            "next":["frame_wj_神器补给_查看"]
+                        }
+                    }
+                }
+                
+            ]
+        },
+        "fw_boss关是否需要喂豆": {
+            "type": "switch",
+            "label": "boss关是否需要喂豆",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡":{
+                            "next":["frame_wj_boss_识别结算"]
+                        }
+                    }
+                },
+                {
+                    "name":"Yes",
+                    "label":"是",
+                    "option":[
+                        "fw_boss关喂豆位置",
+                        "fw_boss关喂豆间隔"
+                    ]
+                }
+                
+            ]
+        },
+        "fw_boss关是否加速":{
+            "type":"switch",
+            "label":"boss关是否加速",
+            "cases":[
+            {
+                "name":"No",
+                "label":"否",
+                "pipeline_override":{
+                    "frame_wj_boss_判断是否进入关内":{
+                        "action":"DoNothing",
+                        "next": ["frame_wj_boss_抛花1"]
+                    }
+                }
+            },
+            {
+                "name":"Yes",
+                "label":"是",
+                "pipeline_override":{
+                    "frame_wj_boss_判断是否进入关内":{
+                        "action":"click"
+                    }
+                }
+            }  
+            ]
+
+        },
+        "fw_boss关喂豆间隔":{
+            "type":"select",
+            "label":"boss关喂豆间隔",
+            "cases":[
+                {
+                    "name": "2秒",
+                    "label": "2秒",
+                    "pipeline_override": {
+                        "frame_wj_boss_喂豆6-3": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆5-3": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆4-3": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆3-3": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆2-3": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆1-3": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆6-2": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆5-2": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆4-2": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆6-4": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆5-4": {
+                            "post_delay": 2000
+                        },
+                        "frame_wj_boss_喂豆4-4": {
+                            "post_delay": 2000
+                        }
+                    }
+                },
+                {
+                    "name": "3秒",
+                    "label": "3秒",
+                    "pipeline_override": {
+                        "frame_wj_boss_喂豆6-3": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆5-3": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆4-3": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆3-3": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆2-3": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆1-3": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆6-2": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆5-2": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆4-2": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆6-4": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆5-4": {
+                            "post_delay": 3000
+                        },
+                        "frame_wj_boss_喂豆4-4": {
+                            "post_delay": 3000
+                        }
+                    }
+                },
+                {
+                    "name": "4秒",
+                    "label": "4秒",
+                    "pipeline_override": {
+                        "frame_wj_boss_喂豆6-3": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆5-3": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆4-3": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆3-3": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆2-3": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆1-3": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆6-2": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆5-2": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆4-2": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆6-4": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆5-4": {
+                            "post_delay": 4000
+                        },
+                        "frame_wj_boss_喂豆4-4": {
+                            "post_delay": 4000
+                        }
+                    }
+                },
+                {
+                    "name": "5秒",
+                    "label": "5秒",
+                    "pipeline_override": {
+                        "frame_wj_boss_喂豆6-3": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆5-3": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆4-3": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆3-3": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆2-3": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆1-3": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆6-2": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆5-2": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆4-2": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆6-4": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆5-4": {
+                            "post_delay": 5000
+                        },
+                        "frame_wj_boss_喂豆4-4": {
+                            "post_delay": 5000
+                        }
+                    }
+                },
+                {
+                    "name": "6秒",
+                    "label": "6秒",
+                    "pipeline_override": {
+                        "frame_wj_boss_喂豆6-3": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆5-3": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆4-3": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆3-3": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆2-3": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆1-3": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆6-2": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆5-2": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆4-2": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆6-4": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆5-4": {
+                            "post_delay": 6000
+                        },
+                        "frame_wj_boss_喂豆4-4": {
+                            "post_delay": 6000
+                        }
+                    }
+                },
+                {
+                    "name": "7秒",
+                    "label": "7秒",
+                    "pipeline_override": {
+                        "frame_wj_boss_喂豆6-3": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆5-3": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆4-3": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆3-3": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆2-3": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆1-3": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆6-2": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆5-2": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆4-2": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆6-4": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆5-4": {
+                            "post_delay": 7000
+                        },
+                        "frame_wj_boss_喂豆4-4": {
+                            "post_delay": 7000
+                        }
+                    }
+                },
+                {
+                    "name": "8秒",
+                    "label": "8秒",
+                    "pipeline_override": {
+                        "frame_wj_boss_喂豆6-3": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆5-3": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆4-3": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆3-3": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆2-3": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆1-3": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆6-2": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆5-2": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆4-2": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆6-4": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆5-4": {
+                            "post_delay": 8000
+                        },
+                        "frame_wj_boss_喂豆4-4": {
+                            "post_delay": 8000
+                        }
+                    }
+                }
+
+            ]
+
+        },
+        "fw_boss关喂豆位置":{
+            "type":"select",
+            "label":"boss关喂豆位置",
+            "cases":[
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆1-3"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆2-3"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆3-3"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆4-3"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆5-3"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆6-3"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆6-2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆5-2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆4-2"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆6-4"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆5-4"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_喂豆4-4"
+                            ]
+                        }
+                    }
+                }
+
+            ]
+        }
+
+
+}
+}

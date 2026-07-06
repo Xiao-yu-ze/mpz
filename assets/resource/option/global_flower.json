@@ -1,0 +1,235 @@
+{
+    "option": {
+        "全局是否抛花": {
+            "type": "switch",
+            "label": "全局是否抛花",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_判断是否进入关内": {
+                            "next": [
+                                "yd_wj_点波1"
+                            ]
+                        },
+                        "frame_wj_boss_判断是否进入关内": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器1"
+                            ]
+                        },
+                        "frame_wj_判断是否进入关内": {
+                            "next": [
+                                "frame_wj_捡花1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option":["1花位置","2花位置"],
+                    "pipeline_override": {
+                        "yd_wj_判断是否进入关内": {
+                            "next": [
+                                "yd_wj_抛花1"
+                            ]
+                        },
+                        "frame_wj_boss_判断是否进入关内": {
+                            "next": [
+                                "frame_wj_boss_抛花1"
+                            ]
+                        },
+                        "frame_wj_判断是否进入关内": {
+                            "next": [
+                                "frame_wj_抛花1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "1花位置": {
+            "type": "select",
+            "label": "1花位置",
+            "cases": [
+                {
+                    "name": "9-1",
+                    "label": "9-1",
+                    "pipeline_override": {
+                        "frame_wj_抛花1": {
+                            "end":[1814,224]
+                        },
+                        "frame_wj_boss_抛花1":{
+                            "end":[1814,224]
+                        }
+                    }
+                },
+                {
+                    "name": "9-2",
+                    "label": "9-2",
+                    "pipeline_override": {
+                        "frame_wj_抛花1": {
+                            "end":[1773,410]
+                        },
+                        "frame_wj_boss_抛花1":{
+                            "end":[1773,410]
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "frame_wj_抛花1": {
+                            "end":[837,220]
+                        },
+                        "frame_wj_boss_抛花1":{
+                            "end":[837,220]
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "frame_wj_抛花1": {
+                            "end":[829,384]
+                        },
+                        "frame_wj_boss_抛花1":{
+                            "end":[829,384]
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "frame_wj_抛花1": {
+                            "end":[830,552]
+                        },
+                        "frame_wj_boss_抛花1":{
+                            "end":[830,552]
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "frame_wj_抛花1": {
+                            "end":[828,710]
+                        },
+                        "frame_wj_boss_抛花1":{
+                            "end":[828,710]
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "frame_wj_抛花1": {
+                            "end":[831,876]
+                        },
+                        "frame_wj_boss_抛花1":{
+                            "end":[831,876]
+                        }
+                    }
+                }
+                
+            ]
+        },
+        "2花位置": {
+            "type": "select",
+            "label": "2花位置",
+            "cases": [
+                {
+                    "name": "9-1",
+                    "label": "9-1",
+                    "pipeline_override": {
+                        "frame_wj_抛花2": {
+                            "end":[1814,224]
+                        },
+                        "frame_wj_boss_抛花2":{
+                            "end":[1814,224]
+                        }
+                    }
+                },
+                {
+                    "name": "9-2",
+                    "label": "9-2",
+                    "pipeline_override": {
+                        "frame_wj_抛花2": {
+                            "end":[1773,410]
+                        },
+                        "frame_wj_boss_抛花2":{
+                            "end":[1773,410]
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "frame_wj_抛花2": {
+                            "end":[837,220]
+                        },
+                        "frame_wj_boss_抛花2":{
+                            "end":[837,220]
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "frame_wj_抛花2": {
+                            "end":[829,384]
+                        },
+                        "frame_wj_boss_抛花2":{
+                            "end":[829,384]
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "frame_wj_抛花2": {
+                            "end":[830,552]
+                        },
+                        "frame_wj_boss_抛花2":{
+                            "end":[830,552]
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "frame_wj_抛花2": {
+                            "end":[828,710]
+                        },
+                        "frame_wj_boss_抛花2":{
+                            "end":[828,710]
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "frame_wj_抛花2": {
+                            "end":[831,876]
+                        },
+                        "frame_wj_boss_抛花2":{
+                            "end":[831,876]
+                        }
+                    }
+                }
+                
+            ]
+        }
+    }
+}

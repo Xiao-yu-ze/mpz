@@ -1,0 +1,98 @@
+{
+    "task": [
+        {
+            "name": "桑葚原大自动脚本",
+            "entry": "Yd_Wj_Entry",
+            "option": [
+                "yd_初始化卡槽和草坪位置",
+                "yd_wj_boss关是否需要喂豆5-3",
+                "全局是否抛花",
+                "yd_无尽全自动循环"
+            ]
+        }
+    ],
+    "option": {
+        "yd_初始化卡槽和草坪位置":{
+            "type":"switch",
+            "label": "初始化卡槽和草坪位置",
+            "description": "一定要开哦",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "Yd_Wj_Entry": {
+                            "next": ["plant_初始化"]
+                        },
+                        "plant_初始化完毕": {
+                            "next": ["yd_wj_过渡"]
+                        }
+                        
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "Yd_Wj_Entry": {
+                            "next": ["plant_初始化"]
+                        },
+                        "plant_初始化完毕": {
+                            "next": ["yd_wj_过渡"]
+                        }
+                        
+                    }
+                }
+            ]
+        },
+        "yd_无尽全自动循环":{
+            "type":"switch",
+            "label": "无尽全自动循环",
+            "description": "打一遍后自动花钻石刷新重新打",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "yd_wj_过渡":{
+                            "next": ["yd_wj_识别开始战斗","yd_wj_识别boss关","wujin_返回"]
+                        },
+                        "wujin_确定4":{
+                            "next": ["Yd_Wj_Entry"]
+                        }
+                    }
+                }
+            ]
+        },
+        "yd_wj_boss关是否需要喂豆5-3": {
+            "type": "switch",
+            "label": "boss关是否需要喂豆",
+            "description": "喂豆位置为5-3",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_boss_判断是否进入关内": {
+                            "next": ["yd_wj_boss_识别结算"]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "yd_wj_boss_判断是否进入关内": {
+                            "next": ["yd_wj_boss_喂豆5-3"]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

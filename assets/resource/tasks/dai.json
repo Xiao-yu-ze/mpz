@@ -1,0 +1,10 @@
+{
+    "task": [
+        {
+            "name": "戴夫杯",
+            "entry": "Dai_Enter",
+            "default_check": false,
+            "description": "在匹配界面开脚本"
+        }
+    ]
+}

@@ -1,0 +1,202 @@
+{
+    "task": [
+        {
+            "name": "心塔自动脚本",
+            "entry": "xinta",
+            "description": "没有木槿请使用阵容2,木槿的卡槽位置随便替换成其他任意一个不用的植物",
+            "option": [
+                "心塔阵型选择",
+                "起始关卡选择",
+                "boss关喂豆间隔",
+                "无尽全自动循环"
+            ]
+        }
+    ],
+    "option": {
+        "无尽全自动循环":{
+            "type":"switch",
+            "label": "无尽全自动循环",
+            "description": "打一遍后自动花钻石刷新重新打",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "xinta3_过渡":{
+                            "next": ["xinta3_识别开始战斗","xinta3_识别boss关","wujin_返回"]
+                        },
+                        "2_xinta3_过渡":{
+                            "next": ["2_xinta3_识别开始战斗","2_xinta3_识别boss关","wujin_返回"]
+                        }
+                    }
+                }
+            ]
+        },
+        "心塔阵型选择": {
+            "type": "select",
+            "label": "心塔阵型选择",
+            "description": "用来适配不同无尽的地形",
+            "cases": [
+                {
+                    "name": "1号阵(详细见公告)",
+                    "label": "1号阵(详细见公告)",
+                    "pipeline_override": { 
+                        "xinta": { 
+                            "next": ["HeartTowerEntry"] 
+                        } ,
+                        "wujin_确定4": {
+                            "next": ["1关"] 
+                            }
+                    }
+                },
+                {
+                    "name": "2号阵(详细见公告)",
+                    "label": "2号阵(详细见公告)",
+                    "pipeline_override": { 
+                        "xinta": { 
+                            "next": ["HeartTowerEntry2"] 
+                        } ,
+                        "xinta_boss_识别结算_防卡":{
+                            "next": ["2_xinta3_识别开始战斗"]
+                        },
+                        "xinta_boss_瓷砖4":{
+                            "end": [979,387]
+                        },
+                        "wujin_确定4": {
+                            "next": ["2_1关"] 
+                            }
+                    }
+                }
+            ]
+        },
+        "起始关卡选择": {
+            "type": "select",
+            "label": "起始关卡",
+            "description": "选择要打的关卡",
+            "default_case": "1关",
+            "cases": [
+                {
+                    "name": "1关",
+                    "label": "第1关",
+                    "pipeline_override": { 
+                        "HeartTowerEntry": { "next": ["1关"] },
+                        "HeartTowerEntry2": { "next": ["2_1关"] }
+                    }
+                },
+                {
+                    "name": "2关",
+                    "label": "第2关",
+                    "pipeline_override": { 
+                        "HeartTowerEntry": { "next": ["2关"] },
+                        "HeartTowerEntry2": { "next": ["2_2关"] }
+                    }
+                },
+                {
+                    "name": "3-149关",
+                    "label": "第3~149关",
+                    "pipeline_override": { 
+                        "HeartTowerEntry": { "next": ["3_149关"] },
+                        "HeartTowerEntry2": { "next": ["2_3_149关"] }
+                    }
+                }
+            ]
+        },
+        "boss关喂豆间隔": {
+            "type": "select",
+            "label": "喂豆间隔",
+            "description": "用来适配不同boss的躺尸速度",
+            "cases": [
+                {
+                    "name": "4秒",
+                    "label": "4秒",
+                    "pipeline_override": { 
+                        "xinta_boss_喂豆电大2": 
+                        { 
+                            "pre_delay": 2000
+                        } 
+                    }
+                },
+                {
+                    "name": "5秒",
+                    "label": "5秒",
+                    "pipeline_override": { 
+                        "xinta_boss_喂豆电大2": 
+                        { 
+                            "pre_delay": 3000
+                        } 
+                    }
+                },
+                {
+                    "name": "6秒",
+                    "label": "6秒",
+                    "pipeline_override": { 
+                        "xinta_boss_喂豆电大2": 
+                        { 
+                            "pre_delay": 4000
+                        } ,
+                        "xinta_boss_喂豆电大4":{
+                            "pre_delay": 6000
+                        }
+                    }
+                },
+                {
+                    "name": "7秒",
+                    "label": "7秒",
+                    "pipeline_override": { 
+                        "xinta_boss_喂豆电大2": 
+                        { 
+                            "pre_delay": 5000
+                        } ,
+                        "xinta_boss_喂豆电大4":{
+                            "pre_delay": 7000
+                        }
+                    }
+                },
+                {
+                    "name": "8秒",
+                    "label": "8秒",
+                    "pipeline_override": { 
+                        "xinta_boss_喂豆电大2": 
+                        { 
+                            "pre_delay": 6000
+                        } ,
+                        "xinta_boss_喂豆电大4":{
+                            "pre_delay": 8000
+                        }
+                    }
+                },
+                {
+                    "name": "9秒",
+                    "label": "9秒",
+                    "pipeline_override": { 
+                        "xinta_boss_喂豆电大2": 
+                        { 
+                            "pre_delay": 7000
+                        } ,
+                        "xinta_boss_喂豆电大4":{
+                            "pre_delay": 9000
+                        }
+                    }
+                },
+                {
+                    "name": "10秒",
+                    "label": "10秒",
+                    "pipeline_override": { 
+                        "xinta_boss_喂豆电大2": 
+                        { 
+                            "pre_delay": 8000
+                        } ,
+                        "xinta_boss_喂豆电大4":{
+                            "pre_delay": 10000
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

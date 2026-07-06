@@ -1,0 +1,38 @@
+{
+    "option": {
+        "是否需要点波": {
+            "type": "switch",
+            "label": "是否需要点波",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_点波":{
+                            "action": "DoNothing"
+                        },
+                        "frame_wj_点波2":{
+                            "action": "DoNothing"
+                        },
+                        "frame_wj_点波3":{
+                            "action": "DoNothing"
+                        },
+                        "frame_wj_点波4":{
+                            "action": "DoNothing"
+                        },
+                        "frame_wj_点波5":{
+                            "action": "DoNothing"
+                        }
+                    }
+                    
+                },
+                {
+                    "name":"Yes",
+                    "label":"是",
+                    "pipeline_override": {}
+                }
+                
+            ]
+    },
+    }
+}

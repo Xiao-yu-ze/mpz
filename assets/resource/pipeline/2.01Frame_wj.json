@@ -1,0 +1,1099 @@
+{
+    "Frame_Wj_Entry": {
+    "action": "DoNothing",
+    "next": ["frame_wj_过渡"]      
+    },
+    "frame_wj_识别开始战斗": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "timeout":-1,
+    "next": ["frame_wj_判断是否进入关内"]
+    },
+    "frame_wj_判断是否进入关内": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": -1,
+    "action": "Click",
+    "target": [1757,56],
+    "next": ["frame_wj_抛花1"]
+    },
+    "frame_wj_抛花1": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [1814,224],
+    "pre_delay": 0,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["frame_wj_抛花2"]
+    },
+    "frame_wj_抛花2": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [1773,410],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "timeout": -1,
+    "next": ["frame_wj_捡花1"]
+    },
+    "frame_wj_捡花1": {
+    "action": "swipe",
+    "begin": [1703,119],
+    "end": [1710,608],
+    "repeat": 30,
+    "repeat_delay": 0,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 20,
+    "timeout": -1,
+    "next": ["frame_wj_喂豆球果(5-3)"]
+    },
+    "frame_wj_喂豆球果(5-3)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1253,553],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_点波":{                                          //喂完豆
+    "action": "Click",
+    "target": [1853, 325],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout":-1,
+    "next":["frame_wj_识别结算","frame_wj_过渡2"]
+    },
+    "frame_wj_过渡2":{                                                 //补植物
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": -1,
+    "next":["frame_wj_识别结算","frame_wj_划飞弹"]
+    },
+    "frame_wj_卡2_补植物1":{
+    "action":"swipe",
+    "begin":[100,300],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡2_补植物2"]
+    },
+    "frame_wj_卡2_补植物2":{
+    "action":"swipe",
+    "begin":[100,300],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡2_补植物3"]
+    },
+    "frame_wj_卡2_补植物3":{
+    "action":"swipe",
+    "begin":[100,300],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡2_补植物4"]
+    },
+    "frame_wj_卡2_补植物4":{
+    "action":"swipe",
+    "begin":[100,300],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡2_补植物5"]
+    },
+    "frame_wj_卡2_补植物5":{
+    "action":"swipe",
+    "begin":[100,300],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡3_过渡"]
+    },
+    "frame_wj_卡3_过渡":{
+    "action":"DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["frame_wj_卡3_补植物1"]
+    },
+    "frame_wj_卡3_补植物1":{
+    "action":"swipe",
+    "begin":[100,400],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡3_补植物2"]
+    },
+    "frame_wj_卡3_补植物2":{
+    "action":"swipe",
+    "begin":[100,400],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡3_补植物3"]
+    },
+    "frame_wj_卡3_补植物3":{
+    "action":"swipe",
+    "begin":[100,400],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡3_补植物4"]
+    },
+    "frame_wj_卡3_补植物4":{
+    "action":"swipe",
+    "begin":[100,400],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡3_补植物5"]
+    },
+    "frame_wj_卡3_补植物5":{
+    "action":"swipe",
+    "begin":[100,400],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡4_过渡"]
+    },
+    "frame_wj_卡4_过渡":{
+    "action":"DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["frame_wj_卡4_补植物1"]
+    },
+    "frame_wj_卡4_补植物1":{
+    "action":"swipe",
+    "begin":[100,500],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡4_补植物2"]
+    },
+    "frame_wj_卡4_补植物2":{
+    "action":"swipe",
+    "begin":[100,500],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡4_补植物3"]
+    },
+    "frame_wj_卡4_补植物3":{
+    "action":"swipe",
+    "begin":[100,500],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡4_补植物4"]
+    },
+    "frame_wj_卡4_补植物4":{
+    "action":"swipe",
+    "begin":[100,500],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡4_补植物5"]
+    },
+    "frame_wj_卡4_补植物5":{
+    "action":"swipe",
+    "begin":[100,500],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡5_过渡"]
+    },
+    "frame_wj_卡5_过渡":{
+    "action":"DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["frame_wj_卡5_补植物1"]
+    },
+    "frame_wj_卡5_补植物1":{
+    "action":"swipe",
+    "begin":[100,600],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡5_补植物2"]
+    },
+    "frame_wj_卡5_补植物2":{
+    "action":"swipe",
+    "begin":[100,600],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡5_补植物3"]
+    },
+    "frame_wj_卡5_补植物3":{
+    "action":"swipe",
+    "begin":[100,600],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡5_补植物4"]
+    },
+    "frame_wj_卡5_补植物4":{
+    "action":"swipe",
+    "begin":[100,600],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_卡5_补植物5"]
+    },
+    "frame_wj_卡5_补植物5":{
+    "action":"swipe",
+    "begin":[100,600],
+    "end":[],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next":["frame_wj_划飞弹"]
+    },
+    "frame_wj_划飞弹":{
+    "action": "swipe",
+    "begin": [1825,921],
+    "end": [1043,310],
+    "repeat": 50,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "repeat_delay": 0,
+    "duration": 1,
+    "next":["frame_wj_识别结算","frame_wj_点波2"]
+    },
+    "判断是否魔甘收尾":{                                    //魔甘
+    "action":"DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["魔甘收尾","判断是否魔甘收尾"]
+    },
+    "魔甘收尾":{                             
+    "recognition":"ColorMatch",
+    "lower":[158, 24, 24],
+    "upper":[199, 56, 57],
+    "roi":[959,37,30,16],
+    "action":"DoNothing",
+    "pre_delay": 0,
+    "post_delay": 15000,
+    "next":["种甜菜1"]
+    },
+    "种甜菜1":{                           
+    "action":"swipe",
+    "begin":[94,904],
+    "end":[1802,387],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["种甜菜2"]
+    },
+    "种甜菜2":{                           
+    "action":"swipe",
+    "begin":[94,904],
+    "end":[1812,721],
+    "pre_delay": 0,
+    "post_delay": 5000,
+    "next":["种魔音"]
+    },
+    "种魔音":{                           
+    "action":"swipe",
+    "begin":[94,704],
+    "end":[1809,556],
+    "pre_delay": 0,
+    "post_delay": 200,
+    "next":["种甘兰1"]
+    },
+    "种甘兰1":{                           
+    "action":"swipe",
+    "begin":[90,803],
+    "end":[1525,391],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration":100,
+    "next":["种甘兰2"]
+    },
+    "种甘兰2":{                           
+    "action":"swipe",
+    "begin":[90,803],
+    "end":[1528,724],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration":100,
+    "timeout": -1,
+    "next":["frame_wj_识别结算"]
+    },
+    "frame_wj_点波2":{
+    "action": "Click",
+    "target": [1853, 325],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["frame_wj_划飞弹2"]
+    },
+    "frame_wj_划飞弹2":{
+    "action": "swipe",
+    "begin": [1825,921],
+    "end": [1043,310],
+    "repeat": 50,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "repeat_delay": 0,
+    "duration": 1,
+    "next":["frame_wj_识别结算","frame_wj_点波3"]
+    },
+    "frame_wj_点波3":{
+    "action": "Click",
+    "target": [1853, 325],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["frame_wj_划飞弹3"]
+    },
+    "frame_wj_划飞弹3":{
+    "action": "swipe",
+    "begin": [1825,921],
+    "end": [1043,310],
+    "repeat": 50,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "repeat_delay": 0,
+    "duration": 1,
+    "next":["frame_wj_识别结算","frame_wj_点波4"]
+    },
+    "frame_wj_点波4":{
+    "action": "Click",
+    "target": [1853, 325],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["frame_wj_划飞弹4"]
+    },
+    "frame_wj_划飞弹4":{
+    "action": "swipe",
+    "begin": [1825,921],
+    "end": [1043,310],
+    "repeat": 50,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "repeat_delay": 0,
+    "duration": 1,
+    "next":["frame_wj_识别结算","frame_wj_点波5"]
+    },
+    "frame_wj_点波5":{
+    "action": "Click",
+    "target": [1853, 325],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next":["frame_wj_划飞弹5"]
+    },
+    "frame_wj_划飞弹5":{
+    "action": "swipe",
+    "begin": [1825,921],
+    "end": [1043,310],
+    "repeat": 50,
+    "pre_delay": 0,
+    "post_delay": 0,
+    "repeat_delay": 0,
+    "duration": 1,
+    "next":["frame_wj_识别结算","frame_wj_过渡3"]
+    },
+    "frame_wj_过渡3":{                                     //小关喂豆
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": -1,
+    "next":["frame_wj_识别结算","frame_wj_喂豆5-3"]
+    },
+    "frame_wj_喂豆5-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1253,553],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },    
+    "frame_wj_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "action": "Click",
+    "rate_limit": 1000,
+    "timeout": -1,
+    "next": ["frame_wj_过渡"]
+    },
+    "frame_wj_过渡": {
+    "action": "DoNothing",
+    "timeout": -1,
+    "next": ["frame_wj_识别开始战斗","frame_wj_识别boss关"]
+    },
+
+    "frame_wj_识别boss关": {
+    "recognition": "ColorMatch",
+    "lower":[146, 213, 6],
+    "upper":[166, 233, 26],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "timeout": -1,
+    "next": ["frame_wj_补给"]
+    },
+    "frame_wj_神器补给_查看": {
+    "action": "Click",
+    "target": [1499,526,17,43],
+    "pre_delay": 2000,
+    "next": ["frame_wj_神器补给_判断是否有神器"]
+    },
+    "frame_wj_神器补给_判断是否有神器": {
+    "action": "DoNothing",
+    "pre_delay": 1000,
+    "post_delay":0,
+    "next": ["frame_wj_神器补给_神器","frame_wj_神器补给_全部植物","frame_wj_神器补给_橙色植物","frame_wj_神器补给_蓝色植物","frame_wj_神器补给_紫色植物","frame_wj_补给"]
+    },
+    "frame_wj_神器补给_神器": {
+    "recognition":"OCR",
+    "expected": "神器",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["frame_wj_神器补给_确定1"]
+    },
+    "frame_wj_神器补给_全部植物": {
+    "recognition":"OCR",
+    "expected": "全部植物",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["frame_wj_神器补给_确定1"]
+    },
+    "frame_wj_神器补给_橙色植物": {
+    "recognition":"OCR",
+    "expected": "橙色植物",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["frame_wj_神器补给_确定1"]
+    },
+    "frame_wj_神器补给_蓝色植物": {
+    "recognition":"OCR",
+    "expected": "蓝色植物",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["frame_wj_神器补给_确定1"]
+    },
+    "frame_wj_神器补给_紫色植物": {
+    "recognition":"OCR",
+    "expected": "紫色植物",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["frame_wj_神器补给_确定1"]
+    },
+    "frame_wj_神器补给_确定1": {
+    "action": "Click",
+    "target": [947,914],
+    "pre_delay": 1000,
+    "next": ["frame_wj_神器补给_确定2"]
+    },
+    "frame_wj_神器补给_确定2": {
+    "action": "Click",
+    "target": [947,914],
+    "pre_delay": 2000,
+    "next": ["frame_wj_神器补给_确定3"]
+    },
+    "frame_wj_神器补给_确定3": {
+    "action": "Click",
+    "target": [947,914],
+    "pre_delay": 2000,
+    "next": ["frame_wj_boss_识别开始"]
+    },
+    "frame_wj_补给": {
+    "recognition": "ColorMatch",
+    "lower":[146, 213, 6],
+    "upper":[166, 233, 26],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "action": "Click",
+    "target": [392,562],
+    "next": ["frame_wj_确定1"]
+    },
+    "frame_wj_确定1": {
+    "action": "Click",
+    "target": [950,921],
+    "next": ["frame_wj_提示","frame_wj_确定3"]
+    },
+    "frame_wj_提示": {
+    "recognition":"OCR",
+    "expected": "提示",
+    "roi": [843,363,142,74],
+    "action": "Click",
+    "target": [892,789],
+    "next": ["frame_wj_确定3"]
+    },
+    "frame_wj_确定3": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["frame_wj_确定4"]
+    },
+    "frame_wj_确定4": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["frame_wj_boss_识别开始"]
+    },
+    "frame_wj_boss_识别开始": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "next": ["frame_wj_boss_判断是否进入关内"]
+    },
+    "frame_wj_boss_判断是否进入关内": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": -1,
+    "action": "Click",
+    "target": [1757,56],
+    "rate_limit" :10,
+    "pre_delay":0,
+    "post_delay":0,
+    "next": ["frame_wj_boss_抛花1"]
+    },
+    "frame_wj_boss_抛花1": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [1814,224],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "next": ["frame_wj_boss_抛花2"]
+    },
+    "frame_wj_boss_抛花2": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [1773,410],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 50,
+    "timeout": -1,
+    "next": ["frame_wj_boss_过渡_相机神器1"]
+    },
+    "frame_wj_boss_过渡_相机神器1": {
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": -1,
+    "next": ["frame_wj_boss_相机神器_复制1"]
+    },
+    "frame_wj_boss_相机神器_复制1": {
+    "action": "Click",
+    "target":[1132,1018],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": -1,
+    "next": ["frame_wj_boss_相机神器_复制2"]
+    },
+    "frame_wj_boss_相机神器_复制2": {
+    "action": "Click",
+    "target":[1055,847],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": -1,
+    "next": ["frame_wj_boss_过渡"]
+    },
+    "frame_wj_boss_过渡": {           //boss关是否喂豆
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": -1,
+    "next": ["frame_wj_boss_喂豆5-3"]
+    },
+    "frame_wj_boss_喂豆5-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1253,553],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆5-3"]
+    },
+    "frame_wj_boss_过渡_相机神器2": {
+    "recognition":"ColorMatch",
+    "roi":[288,37,41,18],
+    "lower":[132, 109, 88],
+    "upper":[210, 153, 119],
+    "inverse": true,
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": -1,
+    "next": ["frame_wj_boss_相机神器_粘贴1"]
+    },
+    "frame_wj_boss_相机神器_粘贴1": {
+    "action": "Click",
+    "target":[1132,1018],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "timeout": -1,
+    "next": ["frame_wj_boss_相机神器_粘贴2"]
+    },
+    "frame_wj_boss_相机神器_粘贴2": {
+    "action": "Click",
+    "target":[1187,852],
+    "pre_delay": 0,
+    "post_delay": 1500,
+    "next": ["frame_wj_boss_相机神器_粘贴3"]
+    },
+    "frame_wj_boss_相机神器_粘贴3": {
+    "action": "Click",
+    "target":[1157,514],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": ["frame_wj_boss_识别结算"]
+    },
+    
+    "frame_wj_boss_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "timeout":-1,
+    "rate_limit": 500,
+    "action": "Click",
+    "pre_delay": 1500,
+    "next": ["frame_wj_识别开始战斗"]
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    "frame_wj_boss_喂豆6-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1396,562,73,59],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆6-3"]
+    },
+    "frame_wj_boss_喂豆4-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1095,553],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆4-3"]
+    },
+    "frame_wj_boss_喂豆3-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [970,550],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆3-3"]
+    },
+    "frame_wj_boss_喂豆2-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [837,553],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆2-3"]
+    },
+    "frame_wj_boss_喂豆1-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [702,556],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆1-3"]
+    },
+    "frame_wj_boss_喂豆6-2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1391,381],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆6-2"]
+    },
+    "frame_wj_boss_喂豆5-2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1251,390],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆5-2"]
+    },
+    "frame_wj_boss_喂豆4-2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1121,389],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆4-2"]
+    },
+    "frame_wj_boss_喂豆6-4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1392,718],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆6-4"]
+    },
+    "frame_wj_boss_喂豆5-4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1263,717],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆5-4"]
+    },
+    "frame_wj_boss_喂豆4-4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1120,723],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "max_hit": -1,
+    "timeout":-1,
+    "duration": 50,
+    "next": ["frame_wj_boss_识别结算","frame_wj_boss_喂豆4-4"]
+    },
+
+
+
+
+
+
+    "frame_wj_喂豆4-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1081,569],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆3-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [970,550],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆2-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [837,553],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆1-3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [702,556],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆5-2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1257,390],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆4-2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1119,391],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆3-2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [972,389],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆2-2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [844,406],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆1-2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [696,405],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆5-4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1257,724],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆4-4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1115,725],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆3-4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [974,724],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆2-4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [840,739],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+    "frame_wj_喂豆1-4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [699,736],
+    "pre_delay": 100,
+    "post_delay": 1000,
+    "timeout":-1,
+    "duration": 100,
+    "next": ["frame_wj_识别结算","frame_wj_点波"]
+    },
+
+
+
+
+
+
+
+    "frame_wj_喂豆球果(4-3)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1115,556],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(3-3)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [974,552],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(2-3)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [836,560],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(1-3)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [699,557],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(4-2)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1115,386],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(3-2)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [976,380],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(2-2)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [833,395],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(1-2)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [694,402],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(4-4)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1122,723],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(3-4)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [975,723],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(2-4)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [839,729],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+    "frame_wj_喂豆球果(1-4)": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [693,723],
+    "pre_delay": 100,
+    "post_delay": 1500,
+    "duration": 100,
+    "next": ["frame_wj_点波"]
+    },
+
+}

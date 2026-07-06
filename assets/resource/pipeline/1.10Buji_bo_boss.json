@@ -1,0 +1,309 @@
+{
+    "补给": {
+    "recognition": "ColorMatch",
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "action": "DoNothing",
+    "next": ["buji_神器补给_查看"]
+    },
+    "buji_神器补给_查看": {
+    "action": "Click",
+    "target": [1499,526,17,43],
+    "pre_delay": 2000,
+    "next": ["buji_神器补给_判断是否有神器"]
+    },
+    "buji_神器补给_判断是否有神器": {
+    "action": "DoNothing",
+    "pre_delay": 1000,
+    "post_delay":0,
+    "next": ["buji_神器补给_全部植物","buji_神器补给_橙色植物","buji_神器补给_蓝色植物","buji_神器补给_神器","buji_神器补给_紫色植物","buji_补给"]
+    },
+    "buji_神器补给_神器": {
+    "recognition":"OCR",
+    "expected": "神器",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["buji_神器补给_确定1"]
+    },
+    "buji_神器补给_全部植物": {
+    "recognition":"OCR",
+    "expected": "全部植物",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["buji_神器补给_确定1"]
+    },
+    "buji_神器补给_橙色植物": {
+    "recognition":"OCR",
+    "expected": "橙色植物",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["buji_神器补给_确定1"]
+    },
+    "buji_神器补给_蓝色植物": {
+    "recognition":"OCR",
+    "expected": "蓝色植物",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["buji_神器补给_确定1"]
+    },
+    "buji_神器补给_紫色植物": {
+    "recognition":"OCR",
+    "expected": "紫色植物",
+    "roi":[291,356,1364,120],
+    "action": "Click",
+    "pre_delay": 1000,
+    "next": ["buji_神器补给_确定1"]
+    },
+    "buji_神器补给_确定1": {
+    "action": "Click",
+    "target": [950,921],
+    "next": ["buji_提示","buji_确定3"]
+    },
+    "buji_提示": {
+    "recognition":"OCR",
+    "expected": "提示",
+    "roi": [843,363,142,74],
+    "action": "Click",
+    "target": [892,789],
+    "next": ["buji_确定3"]
+    },
+    "buji_确定3": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["buji_确定4"]
+    },
+    "buji_确定4": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["xinta_boss_识别开始"]
+    },
+    "buji_补给": {
+    "recognition": "ColorMatch",
+    "lower":[146, 213, 6],
+    "upper":[166, 233, 26],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "action": "Click",
+    "target": [392,562],
+    "next": ["buji_bo_确定1"]
+    },
+    "buji_bo_确定1": {
+    "action": "Click",
+    "target": [950,921],
+    "next": ["buji_bo_提示","buji_bo_确定3"]
+    },
+    "buji_bo_提示": {
+    "recognition":"OCR",
+    "expected": "提示",
+    "roi": [843,363,142,74],
+    "action": "Click",
+    "target": [892,789],
+    "next": ["buji_bo_确定3"]
+    },
+    "buji_bo_确定3": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["buji_bo_确定4"]
+    },
+    "buji_bo_确定4": {
+    "action": "Click",
+    "target": [950,921],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": ["xinta_boss_识别开始"]
+    },
+    "xinta_boss_识别开始": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "next": ["xinta_boss_判断是否进入关内"]
+    },
+    "xinta_boss_判断是否进入关内": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": 10000,
+    "action": "Click",
+    "target": [1757,56],
+    "next": ["xinta_boss_喂豆电大"]
+    },
+    "xinta_boss_喂豆电大": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1110,727],
+    "pre_delay": 0,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["xinta_boss_抛花1"]
+    },
+    "xinta_boss_抛花1": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [700,875],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_抛花2"]
+    },
+    "xinta_boss_抛花2": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [835,869],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_抛花3"]
+    },
+    "xinta_boss_抛花3": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [1100,858],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_抛花4"]
+    },
+    "xinta_boss_抛花4": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [701,699],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_抛花5"]
+    },
+    
+    "xinta_boss_抛花5": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [983,871],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_喂豆电大2"]
+    },
+    "xinta_boss_喂豆电大2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1110,727],
+    "pre_delay": 100,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["xinta_boss_喂豆电大3"]
+    },
+    "xinta_boss_喂豆电大3": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1123,384],
+    "pre_delay": 100,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["xinta_boss_瓷砖1"]
+    },
+    "xinta_boss_瓷砖1": {
+    "action": "swipe",
+    "begin": [100,500],
+    "end": [704,549],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_瓷砖2"]
+    },
+    "xinta_boss_瓷砖2": {
+    "action": "swipe",
+    "begin": [100,500],
+    "end": [973,560],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_瓷砖3"]
+    },
+    "xinta_boss_瓷砖3": {
+    "action": "swipe",
+    "begin": [100,500],
+    "end": [833,379],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_瓷砖4"]
+    },
+    "xinta_boss_瓷砖4": {                      //用2号阵这里会改end
+    "action": "swipe",
+    "begin": [100,500],
+    "end": [693,215],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_瓷砖5"]
+    },
+    "xinta_boss_瓷砖5": {
+    "action": "swipe",
+    "begin": [100,500],
+    "end": [847,220],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_瓷砖6"]
+    },
+    "xinta_boss_瓷砖6": {
+    "action": "swipe",
+    "begin": [100,500],
+    "end": [978,220],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta_boss_喂豆电大4"]
+    },
+    "xinta_boss_喂豆电大4": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1110,727],
+    "pre_delay": 5000,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["xinta_boss_喂豆电大5"]
+    },
+    "xinta_boss_喂豆电大5": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [1123,384],
+    "pre_delay": 100,
+    "post_delay": 100,
+    "duration": 100,
+    "timeout": -1,
+    "next": ["xinta_boss_识别结算"]
+    },
+    "xinta_boss_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "pre_delay":1500,
+    "rate_limit": 500,
+    "action": "Click",
+    "next": ["xinta_boss_识别结算_防卡"]
+    },
+    "xinta_boss_识别结算_防卡": {
+    "pre_delay":1500,
+    "action": "Click",
+    "target":[1207,964],
+    "next": ["xinta3_识别开始战斗"]
+    }
+    
+
+}

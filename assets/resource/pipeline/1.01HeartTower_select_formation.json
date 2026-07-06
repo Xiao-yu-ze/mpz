@@ -1,0 +1,6 @@
+{
+    "xinta":{
+        "action":"DoNothing",
+        "next":[]
+    }
+}

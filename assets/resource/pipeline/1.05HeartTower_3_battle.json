@@ -1,0 +1,147 @@
+{
+    "3_149关": {
+    "action": "DoNothing",
+    "next": ["xinta3_识别开始战斗", "xinta3_识别boss关","wujin_返回"]      
+    },
+    "xinta3_识别开始战斗": {
+    "recognition": "TemplateMatch",
+    "template": "xinta/开始战斗.png",
+    "roi": [1590, 970,301,88],
+    "threshold": 0.75,
+    "action": "Click",
+    "timeout":-1,
+    "next": ["xinta3_判断是否进入关内"]
+    },
+    "xinta3_判断是否进入关内": {
+    "recognition": "ColorMatch",
+    "roi": [700,1004,40,40], 
+    "method": 4, 
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28], 
+    "timeout": 10000,
+    "action": "Click",
+    "target": [1757,56],
+    "next": ["xinta3_抛花1"]
+    },
+    "xinta3_抛花1": {
+    "action": "swipe",
+    "begin": [100,200],
+    "end": [700,875],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta3_喂豆球果"]
+    },
+    "xinta3_喂豆球果": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [712,389],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta3_种飞莲"]
+    },
+    "xinta3_种飞莲": {
+    "action": "swipe",
+    "begin": [92,588],
+    "end": [1669,721],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 200,
+    "next": ["xinta3_铲地锯草"]
+    },
+    "xinta3_铲地锯草": {
+    "action": "swipe",
+    "begin": [1825,1018],
+    "end": [1809,718],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta3_种地锯草"]
+    },
+    "xinta3_种地锯草": {
+    "action": "swipe",
+    "begin": [100,300],
+    "end": [1809,718],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "duration": 100,
+    "next": ["xinta3_点葫芦"]
+    },
+    "xinta3_点葫芦": {
+    "action": "Click",
+    "target": [1129,1005],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": ["xinta3_开葫芦"]
+    },
+    "xinta3_开葫芦": {
+    "action": "Click",
+    "target": [1240,852],
+    "pre_delay": 0,
+    "post_delay": 900,
+    "next": ["xinta3_点波"]
+    },
+    "xinta3_点波":{
+    "action": "Click",
+    "target":[1838,328],
+    "post_delay": 0,
+    "pre_delay": 0,
+    "repeat": 70,
+    "repeat_delay": 20,
+    "next" :["xinta3_识别结算","xinta3_喂豆香蕉1"]
+    },
+    "xinta3_喂豆香蕉1": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [704,546],
+    "pre_delay": 0,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["xinta3_点波2"]
+    },
+    "xinta3_点波2":{
+    "action": "Click",
+    "target":[1838,328],
+    "post_delay": 0,
+    "pre_delay": 0,
+    "repeat": 70,
+    "repeat_delay": 20,
+    "next" :["xinta3_识别结算","xinta3_识别开始战斗","xinta3_识别boss关","xinta3_喂豆香蕉2"]
+
+    },
+    "xinta3_识别结算": {
+    "recognition": "OCR",
+    "roi": [1074,931,268,75],
+    "expected": "继续挑战",
+    "action": "Click",
+    "next": ["xinta3_过渡"]
+    },
+    "xinta3_过渡": {
+    "action": "DoNothing",
+    "timeout": -1,
+    "next": ["xinta3_识别开始战斗","xinta3_识别boss关"]
+    },
+
+    "xinta3_识别boss关": {
+    "recognition": "ColorMatch",
+    "lower": [148, 213, 8], 
+    "upper": [168, 233, 28],
+    "roi": [1085,84,26,33],
+    "rate_limit": 10,
+    "next": ["补给"]
+    },
+    "xinta3_喂豆香蕉2": {
+    "action": "swipe",
+    "begin": [922,1022],
+    "end": [704,546],
+    "pre_delay": 0,
+    "post_delay": 100,
+    "duration": 100,
+    "next": ["xinta3_点波"]
+    }
+
+
+
+    
+}

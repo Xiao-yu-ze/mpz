@@ -1,0 +1,418 @@
+{
+    "Gold_Coin_Entry":{
+        "action": "DoNothing",
+        "next": "goldcoin_识别开始战斗"
+    },
+    "goldcoin_识别开始战斗": {
+        "recognition": "OCR",
+        "expected": "开始战斗",
+        "roi": [1590, 970, 301, 88],
+        "action": "click",
+        "post_delay": 0,
+        "pre_delay": 0,
+        "rate_limit": 100,
+        "next": ["goldcoin_开始游戏"]
+    },
+    "goldcoin_开始游戏": {
+        "action": "click",
+        "target":[1182,704,40,34],
+        "post_delay": 0,
+        "pre_delay": 500,
+        "next": ["goldcoin_是否进入关内"]
+    },
+    "goldcoin_是否进入关内": {
+        "recognition": "ColorMatch",
+        "roi": [1734,30,58,55], 
+        "method": 4, 
+        "lower": [237, 202, 14], 
+        "upper": [255, 229, 70], 
+        "timeout": -1,
+        "action": "Click",
+        "target": [1757,56],
+        "next": ["goldcoin_植物1"]
+    },
+    "goldcoin_植物1": {
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [1119,703],
+        "next": ["goldcoin_开始1"]
+    },
+    "goldcoin_开始1": {
+        "action": "click",
+        "target": [1655,169],
+        "next": ["goldcoin_原葵1"]
+    },
+    "goldcoin_原葵1": {
+        "recognition": "ColorMatch",
+        "roi": [172,135,8,96], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [699,227],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_仿原葵1"]
+    },
+    "goldcoin_仿原葵1": {
+        "recognition": "ColorMatch",
+        "roi": [172,239,9,97], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,300],
+        "end": [842,235],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动1_1"]
+    },
+    "goldcoin_滑动1_1": {
+        "action": "swipe",
+        "begin":[565,197],
+        "end": [1262,192],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动1_2"]
+    },
+    "goldcoin_滑动1_2": {
+        "action": "swipe",
+        "begin":[578,286],
+        "end": [1235,282],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_原葵2"]
+    },
+    "goldcoin_原葵2": {
+        "recognition": "ColorMatch",
+        "roi": [172,135,8,96], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [980,241],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_仿原葵2"]
+    },
+    "goldcoin_仿原葵2": {
+        "recognition": "ColorMatch",
+        "roi": [172,239,9,97], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,300],
+        "end": [1120,229],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动2_1"]
+    },
+    "goldcoin_滑动2_1": {
+        "action": "swipe",
+        "begin":[565,197],
+        "end": [1262,192],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动2_2"]
+    },
+    "goldcoin_滑动2_2": {
+        "action": "swipe",
+        "begin":[578,286],
+        "end": [1235,282],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_原葵3"]
+    },
+    "goldcoin_原葵3": {
+        "recognition": "ColorMatch",
+        "roi": [172,135,8,96], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [705,390],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_仿原葵3"]
+    },
+    "goldcoin_仿原葵3": {
+        "recognition": "ColorMatch",
+        "roi": [172,239,9,97], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,300],
+        "end": [835,379],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动3_1"]
+    },
+    "goldcoin_滑动3_1": {
+        "action": "swipe",
+        "begin":[565,197],
+        "end": [1262,192],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动3_2"]
+    },
+    "goldcoin_滑动3_2": {
+        "action": "swipe",
+        "begin":[578,286],
+        "end": [1235,282],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_原葵4"]
+    },
+    "goldcoin_原葵4": {
+        "recognition": "ColorMatch",
+        "roi": [172,135,8,96], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [973,392],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_仿原葵4"]
+    },
+    "goldcoin_仿原葵4": {
+        "recognition": "ColorMatch",
+        "roi": [172,239,9,97], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,300],
+        "end": [1115,395],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动4_1"]
+    },
+    "goldcoin_滑动4_1": {
+        "action": "swipe",
+        "begin":[574,342],
+        "end": [1242,356],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动4_2"]
+    },
+    "goldcoin_滑动4_2": {
+        "action": "swipe",
+        "begin":[551,438],
+        "end": [1256,440],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_原葵5"]
+    },
+    "goldcoin_原葵5": {
+        "recognition": "ColorMatch",
+        "roi": [172,135,8,96], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [695,557],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_仿原葵5"]
+    },
+    "goldcoin_仿原葵5": {
+        "recognition": "ColorMatch",
+        "roi": [172,239,9,97], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,300],
+        "end": [845,555],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动5_1"]
+    },
+    "goldcoin_滑动5_1": {
+        "action": "swipe",
+        "begin":[574,342],
+        "end": [1242,356],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动5_2"]
+    },
+    "goldcoin_滑动5_2": {
+        "action": "swipe",
+        "begin":[551,438],
+        "end": [1256,440],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_原葵6"]
+    },
+    "goldcoin_原葵6": {
+        "recognition": "ColorMatch",
+        "roi": [172,135,8,96], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [983,557],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_仿原葵6"]
+    },
+    "goldcoin_仿原葵6": {
+        "recognition": "ColorMatch",
+        "roi": [172,239,9,97], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,300],
+        "end": [1118,558],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动6_1"]
+    },
+    "goldcoin_滑动6_1": {
+        "action": "swipe",
+        "begin":[512,503],
+        "end": [1299,523],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动6_2"]
+    },
+    "goldcoin_滑动6_2": {
+        "action": "swipe",
+        "begin":[541,594],
+        "end": [1299,597],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_原葵7"]
+    },
+    "goldcoin_原葵7": {
+        "recognition": "ColorMatch",
+        "roi": [172,135,8,96], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [696,718],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_仿原葵7"]
+    },
+    "goldcoin_仿原葵7": {
+        "recognition": "ColorMatch",
+        "roi": [172,239,9,97], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,300],
+        "end": [847,713],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动7_1"]
+    },
+    "goldcoin_滑动7_1": {
+        "action": "swipe",
+        "begin":[512,503],
+        "end": [1299,523],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动7_2"]
+    },
+    "goldcoin_滑动7_2": {
+        "action": "swipe",
+        "begin":[541,594],
+        "end": [1299,597],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_原葵8"]
+    },
+    "goldcoin_原葵8": {
+        "recognition": "ColorMatch",
+        "roi": [172,135,8,96], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,200],
+        "end": [982,720],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_仿原葵8"]
+    },
+    "goldcoin_仿原葵8": {
+        "recognition": "ColorMatch",
+        "roi": [172,239,9,97], 
+        "method": 4, 
+        "lower": [39, 128, 245], 
+        "upper": [59, 156, 255], 
+        "action": "swipe",
+        "begin": [100,300],
+        "end": [1260,709],
+        "rate_limit": 51,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_滑动8_1"]
+    },
+     "goldcoin_滑动8_1": {
+        "action": "swipe",
+        "begin":[542,674],
+        "end": [1301,670],
+        "post_delay": 0,
+        "pre_delay": 1000,
+        "next": ["goldcoin_滑动8_2"]
+    },
+    "goldcoin_滑动8_2": {
+        "action": "swipe",
+        "begin":[551,759],
+        "end": [1286,759],
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": ["goldcoin_点击菜单"]
+    },
+    "goldcoin_点击菜单": {
+        "action": "Click",
+        "target":[1862,53],
+        "next": ["goldcoin_点击重新开始"]
+    },
+    "goldcoin_点击重新开始": {
+        "recognition":"OCR",
+        "expected": "重新开始",
+        "action": "Click",
+        "OCR":[816,788,300,212],
+        "post_delay": 3000,
+        "next": ["goldcoin_点击继续"]
+    },
+    "goldcoin_点击继续": {
+        "recognition":"OCR",
+        "expected": "继续",
+        "action": "Click",
+        "OCR":[816,788,300,212],
+        "post_delay": 3000,
+        "next": ["goldcoin_识别开始战斗"]
+    }
+}
