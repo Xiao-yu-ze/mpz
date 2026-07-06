@@ -63,7 +63,7 @@
         "./resource/tasks/yd_wj.json",
         "./resource/tasks/dai.json",
         "./resource/tasks/gold.json",
-        "./resource/tasks/frame_wj.json"
+        "./resource/tasks/frame_wj.json",
+        "./resource/tasks/active_tesk.json"
     ]
-    
 }
