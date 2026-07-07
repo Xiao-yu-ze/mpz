@@ -4,27 +4,27 @@
             "name": "活动任务",
             "entry": "active_entrance",
             "description": "各种小任务,令营等",
-            "option":[
+            "option": [
                 "令营任务"
             ]
         }
     ],
-    "option":{
-            "令营任务":{
-                "type":"select",
-                "label":"令营任务",
-                "cases": [
+    "option": {
+        "令营任务": {
+            "type": "select",
+            "label": "令营任务",
+            "cases": [
                 {
                     "name": "庭院点赞,发布关卡任务",
                     "label": "庭院点赞,发布关卡任务",
+                    "description": "在主页开启,开启前确保庭院收藏了一关自己的砸罐子,不然找不到自己刚发布的关卡",
                     "pipeline_override": {
-                        "active_entrance":{
-                            "next":"庭院_任务"
+                        "active_entrance": {
+                            "next": "庭院_任务"
                         }
                     }
                 }
             ]
+        }
     }
-            }
-    
 }
