@@ -1,6 +1,6 @@
 {
-    "xinta":{
-        "action":"DoNothing",
-        "next":[]
+    "xinta": {
+        "action": "DoNothing",
+        "next": []
     }
 }
