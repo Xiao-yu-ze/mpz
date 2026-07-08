@@ -1,444 +1,689 @@
 {
-    "双赢": {
+  "双赢": {
     "recognition": "DirectHit",
     "action": "DoNothing",
     "post_delay": 100,
     "pre_delay": 100,
-    "next": ["识别主页"]
+    "next": [
+      "识别主页"
+    ]
   },
-
-    "识别主页": {
+  "识别主页": {
     "recognition": "OCR",
     "expected": "主题介绍",
     "action": "DoNothing",
-    "roi": [42, 192, 214, 72],
+    "roi": [
+      42,
+      192,
+      214,
+      72
+    ],
     "post_delay": 100,
     "pre_delay": 2000,
     "timeout": 30000,
-    "next": ["竞技"]
-    } ,
-
-
-    "竞技": {
+    "next": [
+      "竞技"
+    ]
+  },
+  "竞技": {
     "action": "Click",
-    "target": [1447,611,61,67],
+    "target": [
+      1447,
+      611,
+      61,
+      67
+    ],
     "post_delay": 100,
     "pre_delay": 2000,
-    "next": ["识别点击开始匹配"]
+    "next": [
+      "识别点击开始匹配"
+    ]
   },
-
-    "识别点击开始匹配": {
+  "识别点击开始匹配": {
     "recognition": "OCR",
     "expected": "开始匹配",
     "action": "Click",
-    "roi": [1636, 970, 282, 86],
+    "roi": [
+      1636,
+      970,
+      282,
+      86
+    ],
     "post_delay": 5000,
     "pre_delay": 2000,
     "timeout": -1,
-    "next": ["识别是否进入关内","超时"]
-    } ,
-
-    "超时": {
+    "next": [
+      "识别是否进入关内",
+      "超时"
+    ]
+  },
+  "超时": {
     "recognition": "OCR",
     "expected": "确定",
     "action": "Click",
-    "roi": [903,750,119,49],
+    "roi": [
+      903,
+      750,
+      119,
+      49
+    ],
     "post_delay": 2000,
     "pre_delay": 2000,
     "timeout": 15000,
-    "next": ["返回"]
-    } ,
-
-    "返回": {
+    "next": [
+      "返回"
+    ]
+  },
+  "返回": {
     "recognition": "OCR",
     "expected": "开始匹配",
     "action": "DoNothing",
-    "roi": [1636, 970, 282, 86],
+    "roi": [
+      1636,
+      970,
+      282,
+      86
+    ],
     "post_delay": 100,
     "pre_delay": 2000,
     "timeout": 20000,
-    "next": ["点击返回"]
-    },
-
-    "点击返回": {
+    "next": [
+      "点击返回"
+    ]
+  },
+  "点击返回": {
     "action": "Click",
-    "target": [1858,39],
+    "target": [
+      1858,
+      39
+    ],
     "post_delay": 100,
     "pre_delay": 100,
-    "next": ["回到主页"]
-    } ,
-
-
-    "回到主页": {
+    "next": [
+      "回到主页"
+    ]
+  },
+  "回到主页": {
     "recognition": "OCR",
     "expected": "主题介绍",
     "action": "DoNothing",
-    "roi": [42, 192, 214, 72],
+    "roi": [
+      42,
+      192,
+      214,
+      72
+    ],
     "post_delay": 100,
     "pre_delay": 100,
     "timeout": 30000,
-    "next": ["点击返回1"]
-    } ,
-
-    "点击返回1": {
+    "next": [
+      "点击返回1"
+    ]
+  },
+  "点击返回1": {
     "action": "Click",
-    "target": [1858,39],
+    "target": [
+      1858,
+      39
+    ],
     "post_delay": 100,
     "pre_delay": 100,
-    "next": ["星系"]
-    } ,
-
-    "星系": {
+    "next": [
+      "星系"
+    ]
+  },
+  "星系": {
     "action": "Click",
-    "target": [1791,991],
+    "target": [
+      1791,
+      991
+    ],
     "post_delay": 100,
     "pre_delay": 5000,
-    "next": ["点击返回2"]
-    } ,
-
-    "点击返回2": {
+    "next": [
+      "点击返回2"
+    ]
+  },
+  "点击返回2": {
     "action": "Click",
-    "target": [48,51],
+    "target": [
+      48,
+      51
+    ],
     "post_delay": 100,
     "pre_delay": 3000,
-    "next": ["点击开始游戏"]
-    } ,
-
-    "点击开始游戏": {
+    "next": [
+      "点击开始游戏"
+    ]
+  },
+  "点击开始游戏": {
     "action": "Click",
-    "target": [943,858],
+    "target": [
+      943,
+      858
+    ],
     "post_delay": 100,
     "pre_delay": 5000,
-    "next": ["使用本地"]
-    } ,
-
-    "使用本地": {
+    "next": [
+      "使用本地"
+    ]
+  },
+  "使用本地": {
     "action": "Click",
-    "target": [943,858],
+    "target": [
+      943,
+      858
+    ],
     "post_delay": 3000,
     "pre_delay": 5000,
-    "next": ["公告"]
-    } ,
-
-    "公告": {
+    "next": [
+      "公告"
+    ]
+  },
+  "公告": {
     "recognition": "OCR",
     "expected": "公告",
-    "roi": [849,89,195,82],
+    "roi": [
+      849,
+      89,
+      195,
+      82
+    ],
     "action": "DoNothing",
     "post_delay": 100,
     "pre_delay": 1000,
-    "next": ["公告的叉"]
-    } ,
-
-    "公告的叉": {
+    "next": [
+      "公告的叉"
+    ]
+  },
+  "公告的叉": {
     "action": "DoNothing",
-    "target": [1639,94,29,13],
+    "target": [
+      1639,
+      94,
+      29,
+      13
+    ],
     "post_delay": 100,
     "pre_delay": 5000,
-    "next": ["主页的竞技"]
-    } ,
-
-    "主页的竞技": {
+    "next": [
+      "主页的竞技"
+    ]
+  },
+  "主页的竞技": {
     "action": "Click",
-    "target": [1244,1009,48,45],
+    "target": [
+      1244,
+      1009,
+      48,
+      45
+    ],
     "post_delay": 100,
     "pre_delay": 5000,
-    "next": ["双人"]
-    } ,
-
-    "双人": {
-    "recognition":"OCR",
-    "roi": [836,557,829,345],
+    "next": [
+      "双人"
+    ]
+  },
+  "双人": {
+    "recognition": "OCR",
+    "roi": [
+      836,
+      557,
+      829,
+      345
+    ],
     "expected": "双人对决",
     "action": "Click",
     "post_delay": 100,
     "pre_delay": 100,
-    "next": ["双赢"]
-    } ,
-
-    "识别是否进入关内": {
+    "next": [
+      "双赢"
+    ]
+  },
+  "识别是否进入关内": {
     "recognition": "OCR",
-    "expected": ["升级","开级","级","开","升"],
+    "expected": [
+      "升级",
+      "开级",
+      "级",
+      "开",
+      "升"
+    ],
     "action": "Click",
-    "roi": [198,140,83,43],
+    "roi": [
+      198,
+      140,
+      83,
+      43
+    ],
     "post_delay": 100,
     "pre_delay": 1000,
     "timeout": 15000,
-    "next": ["double_123"]
-    } ,
-    "double_123": {
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_123": {
     "action": "DoNothing",
-    "post_delay":200,
-    "pre_delay":0,
-    "next": ["是否结算","double_是否扣血","double_退出1"]
-    },
-    "double_退出1": {
+    "post_delay": 200,
+    "pre_delay": 0,
+    "next": [
+      "是否结算",
+      "double_是否扣血",
+      "double_退出1"
+    ]
+  },
+  "double_退出1": {
     "action": "ClickKey",
     "key": 3,
-    "post_delay":0,
-    "pre_delay":0,
-    "next": ["double_应用宝"]
-    },
-    "double_是否扣血": {
+    "post_delay": 0,
+    "pre_delay": 0,
+    "next": [
+      "double_应用宝"
+    ]
+  },
+  "double_是否扣血": {
     "recognition": "ColorMatch",
-    "roi": [1015,563,13,14], 
-    "method": 4, 
-    "lower": [68, 69, 68], 
-    "upper": [99, 98, 99], 
+    "roi": [
+      1015,
+      563,
+      13,
+      14
+    ],
+    "method": 4,
+    "lower": [
+      68,
+      69,
+      68
+    ],
+    "upper": [
+      99,
+      98,
+      99
+    ],
     "post_delay": 0,
     "timeout": 30000,
     "rate_limit": 100,
-    "next": ["种海枣"]
+    "next": [
+      "种海枣"
+    ]
   },
-    "种海枣": {
+  "种海枣": {
     "action": "Swipe",
-    "begin": [106,242],
-    "end": [773,317],
+    "begin": [
+      106,
+      242
+    ],
+    "end": [
+      773,
+      317
+    ],
     "duration": 100,
     "post_delay": 0,
     "pre_delay": 100,
-    "next": ["识别冰龙"]
+    "next": [
+      "识别冰龙"
+    ]
   },
-    "识别冰龙": {
+  "识别冰龙": {
     "recognition": "ColorMatch",
-    "roi": [260,229,25,16], 
-    "method": 4, 
-    "lower": [230,237,245], 
-    "upper": [249,257,255], 
+    "roi": [
+      260,
+      229,
+      25,
+      16
+    ],
+    "method": 4,
+    "lower": [
+      230,
+      237,
+      245
+    ],
+    "upper": [
+      249,
+      257,
+      255
+    ],
     "timeout": 30000,
     "post_delay": 1000,
     "rate_limit": 100,
-    "next": ["种冰龙"]
+    "next": [
+      "种冰龙"
+    ]
   },
-
-    "种冰龙": {
+  "种冰龙": {
     "action": "Swipe",
-    "begin": [260,229],
-    "end": [680,323],
+    "begin": [
+      260,
+      229
+    ],
+    "end": [
+      680,
+      323
+    ],
     "duration": 200,
     "post_delay": 500,
     "pre_delay": 0,
-    "next": ["识别冰龙2"]
+    "next": [
+      "识别冰龙2"
+    ]
   },
-  
-    "识别冰龙2": {
+  "识别冰龙2": {
     "recognition": "ColorMatch",
-    "roi": [260,229,25,16], 
-    "method": 4, 
-    "lower": [230,237,245], 
-    "upper": [249,257,255], 
+    "roi": [
+      260,
+      229,
+      25,
+      16
+    ],
+    "method": 4,
+    "lower": [
+      230,
+      237,
+      245
+    ],
+    "upper": [
+      249,
+      257,
+      255
+    ],
     "post_delay": 1000,
     "timeout": 30000,
     "rate_limit": 100,
-    "next": ["种冰龙2"]
+    "next": [
+      "种冰龙2"
+    ]
   },
-    "种冰龙2": {
+  "种冰龙2": {
     "action": "Swipe",
-    "begin": [260,229],
-    "end": [676,203],
+    "begin": [
+      260,
+      229
+    ],
+    "end": [
+      676,
+      203
+    ],
     "duration": 200,
     "post_delay": 500,
     "pre_delay": 0,
-    "next": ["识别冰龙3"]
+    "next": [
+      "识别冰龙3"
+    ]
   },
-    "识别冰龙3": {
+  "识别冰龙3": {
     "recognition": "ColorMatch",
-    "roi": [260,229,25,16], 
-    "method": 4, 
-    "lower": [230,237,245], 
-    "upper": [249,257,255], 
+    "roi": [
+      260,
+      229,
+      25,
+      16
+    ],
+    "method": 4,
+    "lower": [
+      230,
+      237,
+      245
+    ],
+    "upper": [
+      249,
+      257,
+      255
+    ],
     "post_delay": 1000,
     "timeout": 30000,
     "rate_limit": 100,
-    "next": ["种冰龙3"]
+    "next": [
+      "种冰龙3"
+    ]
   },
-   "种冰龙3": {
+  "种冰龙3": {
     "action": "Swipe",
-    "begin": [260,229],
-    "end": [682,446],
+    "begin": [
+      260,
+      229
+    ],
+    "end": [
+      682,
+      446
+    ],
     "duration": 200,
     "post_delay": 10000,
     "pre_delay": 0,
-    "timeout":-1,
-    "next": ["免控buff出现","是否结算"]
+    "timeout": -1,
+    "next": [
+      "免控buff出现",
+      "是否结算"
+    ]
   },
-
-    "免控buff出现": {
+  "免控buff出现": {
     "recognition": "ColorMatch",
-    "roi": [299,1012,16,14], 
-    "method": 4, 
-    "lower": [245, 244, 204], 
-    "upper": [255, 254, 255], 
+    "roi": [
+      299,
+      1012,
+      16,
+      14
+    ],
+    "method": 4,
+    "lower": [
+      245,
+      244,
+      204
+    ],
+    "upper": [
+      255,
+      254,
+      255
+    ],
     "action": "Click",
     "rate_limit": 1000,
     "timeout": -1,
-    "next": ["放橄榄球"]
-    } ,
-
-    "放橄榄球": {
+    "next": [
+      "放橄榄球"
+    ]
+  },
+  "放橄榄球": {
     "action": "Click",
-    "target": [290,768],
+    "target": [
+      290,
+      768
+    ],
     "post_delay": 500,
     "pre_delay": 500,
-    "timeout":-1,
-    "next": ["是否结算","放橄榄球"]
+    "timeout": -1,
+    "next": [
+      "是否结算",
+      "放橄榄球"
+    ]
   },
-
-    "是否结算": {
+  "是否结算": {
     "recognition": "ColorMatch",
-    "roi": [1854,35,7,10], 
-    "method": 4, 
-    "lower": [107, 125, 130], 
-    "upper": [126, 128, 134], 
+    "roi": [
+      1854,
+      35,
+      7,
+      10
+    ],
+    "method": 4,
+    "lower": [
+      107,
+      125,
+      130
+    ],
+    "upper": [
+      126,
+      128,
+      134
+    ],
     "action": "DoNothing",
     "post_delay": 3000,
     "pre_delay": 0,
     "rate_limit": 100,
     "timeout": -1,
-    "next": ["点确认"]
-    } ,
-
-    "点确认": {
+    "next": [
+      "点确认"
+    ]
+  },
+  "点确认": {
     "recognition": "OCR",
     "expected": "确认",
-    "roi": [881,937,181,59], 
+    "roi": [
+      881,
+      937,
+      181,
+      59
+    ],
     "action": "Click",
     "post_delay": 0,
     "pre_delay": 0,
     "rate_limit": 500,
     "timeout": 10000,
-    "next": ["双赢"]
-    },
-
-    "double_360": {
+    "next": [
+      "双赢"
+    ]
+  },
+  "double_360": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthd360",
-    
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    },
-    "double_九游": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_九游": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthduc",
-    "pre_delay":5000,
-  
-    "next": ["double_123"]
-    },
-    "double_OPPO": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_OPPO": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdop",
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    },
-    "double_应用宝": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_应用宝": {
     "action": "StartApp",
     "package": "com.tencent.tmgp.pvz2hdtxyyb",
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    },
-    "double_b服": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_b服": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthd.bilibili",
-    "pre_delay":5000,
-
-    "next": ["double_123"]    
-    },
-    "double_vivo": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_vivo": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdbbg",
-    "pre_delay":5000,
- 
-    "next": ["double_123"]
-    },
-    "double_荣耀": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_荣耀": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthd.honor",
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    },
-    "double_华为": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_华为": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdhwct",
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    },
-    "double_好游快报": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_好游快报": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdbk",
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    },
-    "double_联想": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_联想": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdlx",
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    },
-    "double_百度": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_百度": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthd.g.baidu",
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    },
-    "double_7723": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_7723": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdbazhang",
-    "pre_delay":5000,
-  
-    "next": ["double_123"]
-    },
-    "double_官方渠道": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_官方渠道": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdbk",
-    "pre_delay":5000,
- 
-    "next": ["double_123"]
-    },
-    "double_taptap": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_taptap": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdbk",
-    
-    "pre_delay":5000,
- 
-    "next": ["double_123"]
-    },
-    "double_taptap01": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_taptap01": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdtap01",
-    
- 
-    "next": ["double_123"]
-    },
-    "double_taptap001": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_taptap001": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdtap001",
-    
-    "pre_delay":5000,
- 
-    "next": ["double_123"]
-    },
-    "double_4399": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_4399": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthd4399",
-    "pre_delay":5000,
-  
-    "next": ["double_123"]
-    },
-    "double_小米": {
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_小米": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdxm",
-    "pre_delay":5000,
-
-    "next": ["double_123"]
-    }
-    
-
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  }
 }
