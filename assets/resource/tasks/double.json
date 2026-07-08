@@ -5,32 +5,238 @@
             "entry": "双赢",
             "default_check": false,
             "description": "选完渠道,在双人界面使用即可",
-            "option": ["double_选渠道服"]
+            "option": [
+                "double_选渠道服",
+                "自动选卡"
+            ]
         }
     ],
     "option": {
+        "自动选卡": {
+            "type": "switch",
+            "label": "自动选植物和僵尸(否则就要自己选)",
+            "description": "详细见公告",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "双赢": {
+                            "next": [
+                                "double_自选植物_军队"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "double_选渠道服": {
             "type": "select",
             "label": "选渠道服",
             "cases": [
-                { "name": "360", "label": "360", "pipeline_override": { "double_退出1": { "next": ["double_360"] } } },
-                { "name": "OPPO", "label": "OPPO", "pipeline_override": { "double_退出1": { "next": ["double_OPPO"] } } },
-                { "name": "九游", "label": "九游", "pipeline_override": { "double_退出1": { "next": ["double_九游"] } } },
-                { "name": "应用宝", "label": "应用宝", "pipeline_override": { "double_退出1": { "next": ["double_应用宝"] } } },
-                { "name": "blibli", "label": "blibli", "pipeline_override": { "double_退出1": { "next": ["double_b服"] } } },
-                { "name": "vivo", "label": "vivo", "pipeline_override": { "double_退出1": { "next": ["double_vivo"] } } },
-                { "name": "荣耀", "label": "荣耀", "pipeline_override": { "double_退出1": { "next": ["double_荣耀"] } } },
-                { "name": "华为", "label": "华为", "pipeline_override": { "double_退出1": { "next": ["double_华为"] } } },
-                { "name": "好游快报", "label": "好游快报", "pipeline_override": { "double_退出1": { "next": ["double_好游快报"] } } },
-                { "name": "联想", "label": "联想", "pipeline_override": { "double_退出1": { "next": ["double_联想"] } } },
-                { "name": "百度", "label": "百度", "pipeline_override": { "double_退出1": { "next": ["double_百度"] } } },
-                { "name": "7723", "label": "7723", "pipeline_override": { "double_退出1": { "next": ["double_7723"] } } },
-                { "name": "taptap", "label": "taptap", "pipeline_override": { "double_退出1": { "next": ["double_taptap"] } } },
-                { "name": "官渠", "label": "官渠", "pipeline_override": { "double_退出1": { "next": ["double_官方渠道"] } } },
-                { "name": "taptap01", "label": "taptap01免邦", "pipeline_override": { "double_退出1": { "next": ["double_taptap01"] } } },
-                { "name": "taptap001", "label": "taptap001免绑", "pipeline_override": { "double_退出1": { "next": ["double_taptap001"] } } },
-                { "name": "4399", "label": "4399", "pipeline_override": { "double_退出1": { "next": ["double_4399"] } } },
-                { "name": "小米", "label": "小米", "pipeline_override": { "double_退出1": { "next": ["double_小米"] } } }
+                {
+                    "name": "360",
+                    "label": "360",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_360"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "OPPO",
+                    "label": "OPPO",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_OPPO"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "九游",
+                    "label": "九游",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_九游"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "应用宝",
+                    "label": "应用宝",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_应用宝"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "blibli",
+                    "label": "blibli",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_b服"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "vivo",
+                    "label": "vivo",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_vivo"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "荣耀",
+                    "label": "荣耀",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_荣耀"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "华为",
+                    "label": "华为",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_华为"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "好游快报",
+                    "label": "好游快报",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_好游快报"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "联想",
+                    "label": "联想",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_联想"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "百度",
+                    "label": "百度",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_百度"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "7723",
+                    "label": "7723",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_7723"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "taptap",
+                    "label": "taptap",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_taptap"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "官渠",
+                    "label": "官渠",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_官方渠道"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "taptap01",
+                    "label": "taptap01免邦",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_taptap01"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "taptap001",
+                    "label": "taptap001免绑",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_taptap001"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4399",
+                    "label": "4399",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_4399"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "小米",
+                    "label": "小米",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_小米"
+                            ]
+                        }
+                    }
+                }
             ]
         }
     }

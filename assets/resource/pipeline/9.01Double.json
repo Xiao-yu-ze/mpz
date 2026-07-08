@@ -8,6 +8,264 @@
       "识别主页"
     ]
   },
+  "double_自选植物_军队": {
+    "recognition": "OCR",
+    "expected": "军队",
+    "action": "Click",
+    "roi": [
+      1371,
+      884,
+      445,
+      196
+    ],
+    "post_delay": 1000,
+    "next": [
+      "double_自选植物_编辑阵容"
+    ]
+  },
+  "double_自选植物_编辑阵容": {
+    "recognition": "OCR",
+    "expected": "编辑阵容",
+    "action": "Click",
+    "roi": [
+      867,
+      385,
+      191,
+      67
+    ],
+    "post_delay": 1000,
+    "next": [
+      "double_自选植物_点击6号卡槽"
+    ]
+  },
+  "double_自选植物_点击6号卡槽": {
+    "action": "Click",
+    "target": [
+      1247,
+      287,
+      46,
+      41
+    ],
+    "pre_delay": 1000,
+    "next": [
+      "double_自选植物_找橄榄球",
+      "double_自选植物_返回"
+    ]
+  },
+  "double_自选植物_找橄榄球": {
+    "recognition": "ColorMatch",
+    "roi": [
+      190,
+      604,
+      787,
+      130
+    ],
+    "lower": [
+      140,
+      24,
+      24
+    ],
+    "upper": [
+      189,
+      34,
+      35
+    ],
+    "action": "Click",
+    "pre_delay": 1000,
+    "post_delay": 2000,
+    "next": [
+      "double_自选植物_保存"
+    ]
+  },
+  "double_自选植物_保存": {
+    "action": "Click",
+    "target": [
+      953,
+      419,
+      40,
+      32
+    ],
+    "pre_delay": 1000,
+    "next": [
+      "double_自选植物_保存成功"
+    ]
+  },
+  "double_自选植物_保存成功": {
+    "recognition": "OCR",
+    "expected": "确定",
+    "action": "Click",
+    "roi": [
+      913,
+      741,
+      98,
+      56
+    ],
+    "post_delay": 1000,
+    "next": [
+      "double_自选植物_返回"
+    ]
+  },
+  "double_自选植物_返回": {
+    "action": "Click",
+    "target": [
+      1861,
+      66,
+      36,
+      20
+    ],
+    "post_delay": 1000,
+    "next": [
+      "double_自选植物_竞技"
+    ]
+  },
+  "double_自选植物_竞技": {
+    "action": "Click",
+    "target": [
+      1454,
+      562,
+      11,
+      34
+    ],
+    "pre_delay": 1000,
+    "post_delay": 1000,
+    "next": [
+      "double_自选植物_卡槽1"
+    ]
+  },
+  "double_自选植物_卡槽1": {
+    "action": "Click",
+    "target": [
+      88,
+      181,
+      17,
+      18
+    ],
+    "pre_delay": 500,
+    "post_delay": 500,
+    "next": [
+      "double_自选植物_卡槽2"
+    ]
+  },
+  "double_自选植物_卡槽2": {
+    "action": "Click",
+    "target": [
+      92,
+      290,
+      15,
+      23
+    ],
+    "pre_delay": 500,
+    "post_delay": 1500,
+    "next": [
+      "double_自选植物_过渡1"
+    ]
+  },
+  "double_自选植物_过渡1": {
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "double_自选植物_海枣",
+      "double_自选植物_上滑1"
+    ]
+  },
+  "double_自选植物_海枣": {
+    "recognition": "TemplateMatch",
+    "template": [
+      "海枣.png"
+    ],
+    "roi": [
+      205,
+      582,
+      892,
+      460
+    ],
+    "action": "Click",
+    "pre_delay": 500,
+    "post_delay": 1000,
+    "next": [
+      "double_自选植物_回到顶层"
+    ]
+  },
+  "double_自选植物_上滑1": {
+    "action": "Swipe",
+    "begin": [
+      613,
+      1032
+    ],
+    "end": [
+      633,
+      750
+    ],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "duration": 1000,
+    "next": [
+      "double_自选植物_过渡1"
+    ]
+  },
+  "double_自选植物_回到顶层": {
+    "action": "Swipe",
+    "begin": [
+      591,
+      581
+    ],
+    "end": [
+      613,
+      1032
+    ],
+    "pre_delay": 0,
+    "post_delay": 500,
+    "duration": 500,
+    "repeat": 10,
+    "next": [
+      "double_自选植物_过渡2"
+    ]
+  },
+  "double_自选植物_过渡2": {
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "double_自选植物_冰龙",
+      "double_自选植物_上滑2"
+    ]
+  },
+  "double_自选植物_冰龙": {
+    "recognition": "TemplateMatch",
+    "template": [
+      "冰龙.png"
+    ],
+    "roi": [
+      205,
+      582,
+      892,
+      460
+    ],
+    "action": "Click",
+    "pre_delay": 500,
+    "post_delay": 1000,
+    "next": [
+      "识别点击开始匹配"
+    ]
+  },
+  "double_自选植物_上滑2": {
+    "action": "Swipe",
+    "begin": [
+      613,
+      1032
+    ],
+    "end": [
+      633,
+      750
+    ],
+    "pre_delay": 0,
+    "post_delay": 3000,
+    "duration": 1000,
+    "next": [
+      "double_自选植物_过渡2"
+    ]
+  },
   "识别主页": {
     "recognition": "OCR",
     "expected": "主题介绍",
@@ -22,10 +280,10 @@
     "pre_delay": 2000,
     "timeout": 30000,
     "next": [
-      "竞技"
+      "double_竞技"
     ]
   },
-  "竞技": {
+  "double_竞技": {
     "action": "Click",
     "target": [
       1447,
@@ -197,7 +455,7 @@
     ]
   },
   "公告的叉": {
-    "action": "DoNothing",
+    "action": "Click",
     "target": [
       1639,
       94,
@@ -264,9 +522,13 @@
     ]
   },
   "double_123": {
-    "action": "DoNothing",
-    "post_delay": 200,
-    "pre_delay": 0,
+    "action": "Click",
+    "target": [
+      937,
+      762
+    ],
+    "post_delay": 0,
+    "pre_delay": 600,
     "next": [
       "是否结算",
       "double_是否扣血",
@@ -301,6 +563,7 @@
       98,
       99
     ],
+    "pre_delay": 0,
     "post_delay": 0,
     "timeout": 30000,
     "rate_limit": 100,
@@ -321,6 +584,18 @@
     "duration": 100,
     "post_delay": 0,
     "pre_delay": 100,
+    "next": [
+      "double_防卡1"
+    ]
+  },
+  "double_防卡1": {
+    "action": "Click",
+    "target": [
+      937,
+      762
+    ],
+    "pre_delay": 0,
+    "post_delay": 0,
     "next": [
       "识别冰龙"
     ]
@@ -452,8 +727,29 @@
     "pre_delay": 0,
     "timeout": -1,
     "next": [
+      "double_过渡"
+    ]
+  },
+  "double_过渡": {
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
       "免控buff出现",
-      "是否结算"
+      "是否结算",
+      "double_防卡2"
+    ]
+  },
+  "double_防卡2": {
+    "action": "Click",
+    "target": [
+      937,
+      762
+    ],
+    "pre_delay": 0,
+    "post_delay": 500,
+    "next": [
+      "double_过渡"
     ]
   },
   "免控buff出现": {
@@ -493,6 +789,20 @@
     "timeout": -1,
     "next": [
       "是否结算",
+      "double_防卡3"
+    ]
+  },
+  "double_防卡3": {
+    "action": "Click",
+    "target": [
+      937,
+      762,
+      38,
+      23
+    ],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
       "放橄榄球"
     ]
   },
@@ -539,7 +849,7 @@
     "rate_limit": 500,
     "timeout": 10000,
     "next": [
-      "双赢"
+      "识别主页"
     ]
   },
   "double_360": {
