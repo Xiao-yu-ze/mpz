@@ -1,67 +1,110 @@
 {
     "Yd_Wj_Entry": {
-    "action": "DoNothing",
-    "next": ["yd_wj_过渡"]      
+        "action": "DoNothing",
+        "next": [
+            "yd_wj_过渡"
+        ]
     },
     "yd_wj_识别开始战斗": {
-    "recognition": "TemplateMatch",
-    "template": "xinta/开始战斗.png",
-    "roi": [1590, 970,301,88],
-    "threshold": 0.75,
-    "action": "Click",
-    "timeout":-1,
-    "next": ["yd_wj_判断是否进入关内"]
+        "recognition": "TemplateMatch",
+        "template": "xinta/开始战斗.png",
+        "roi": [
+            1590,
+            970,
+            301,
+            88
+        ],
+        "action": "Click",
+        "timeout": -1,
+        "next": [
+            "yd_wj_判断是否进入关内"
+        ]
     },
     "yd_wj_判断是否进入关内": {
-    "recognition": "ColorMatch",
-    "roi": [700,1004,40,40], 
-    "method": 4, 
-    "lower": [148, 213, 8], 
-    "upper": [168, 233, 28], 
-    "timeout": -1,
-    "action": "Click",
-    "target": [1757,56],
-    "next": ["yd_wj_抛花1"]
+        "recognition": "ColorMatch",
+        "roi": [
+            700,
+            1004,
+            40,
+            40
+        ],
+        "method": 4,
+        "lower": [
+            148,
+            213,
+            8
+        ],
+        "upper": [
+            168,
+            233,
+            28
+        ],
+        "timeout": -1,
+        "action": "Click",
+        "target": [
+            1757,
+            56
+        ],
+        "next": [
+            "yd_wj_抛花1"
+        ]
     },
     "yd_wj_抛花1": {
-    "action": "swipe",
-    "begin": "卡槽1",
-    "end": "9-1",
-    "pre_delay": 0,
-    "post_delay": 100,
-    "duration": 100,
-    "next": ["yd_wj_抛花2"]
+        "action": "Swipe",
+        "begin": "卡槽1",
+        "end": "9-1",
+        "pre_delay": 0,
+        "post_delay": 100,
+        "duration": 100,
+        "next": [
+            "yd_wj_抛花2"
+        ]
     },
     "yd_wj_抛花2": {
-    "action": "swipe",
-    "begin": "卡槽1",
-    "end": "9-2",
-    "pre_delay": 0,
-    "post_delay": 0,
-    "duration": 100,
-    "timeout": -1,
-    "next": ["yd_wj_捡花1"]
+        "action": "Swipe",
+        "begin": "卡槽1",
+        "end": "9-2",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "timeout": -1,
+        "next": [
+            "yd_wj_捡花1"
+        ]
     },
     "yd_wj_捡花1": {
-    "action": "swipe",
-    "begin": [1801,182],
-    "end": [1808,464],
-    "repeat":50,
-    "repeat_delay": 0,
-    "pre_delay": 0,
-    "post_delay": 0,
-    "duration": 5,
-    "timeout": -1,
-    "next": ["yd_wj_点波1"]
+        "action": "Swipe",
+        "begin": [
+            1801,
+            182
+        ],
+        "end": [
+            1808,
+            464
+        ],
+        "repeat": 50,
+        "repeat_delay": 0,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 5,
+        "timeout": -1,
+        "next": [
+            "yd_wj_点波1"
+        ]
     },
     "yd_wj_点波1": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [1853, 325],
+        "target": [
+            1853,
+            325
+        ],
         "repeat": 2,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_大哥滑动1"]
+        "next": [
+            "yd_wj_大哥滑动1"
+        ]
     },
     "yd_wj_大哥滑动1": {
         "recognition": "DirectHit",
@@ -71,7 +114,9 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_大哥滑动2"]
+        "next": [
+            "yd_wj_大哥滑动2"
+        ]
     },
     "yd_wj_大哥滑动2": {
         "recognition": "DirectHit",
@@ -81,7 +126,9 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_大哥滑动3"]
+        "next": [
+            "yd_wj_大哥滑动3"
+        ]
     },
     "yd_wj_大哥滑动3": {
         "recognition": "DirectHit",
@@ -91,9 +138,10 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_原豌滑动1"]
+        "next": [
+            "yd_wj_原豌滑动1"
+        ]
     },
-   
     "yd_wj_原豌滑动1": {
         "recognition": "DirectHit",
         "action": "Swipe",
@@ -102,7 +150,9 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_原豌滑动2"]
+        "next": [
+            "yd_wj_原豌滑动2"
+        ]
     },
     "yd_wj_原豌滑动2": {
         "recognition": "DirectHit",
@@ -112,7 +162,9 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_原豌滑动3"]
+        "next": [
+            "yd_wj_原豌滑动3"
+        ]
     },
     "yd_wj_原豌滑动3": {
         "recognition": "DirectHit",
@@ -122,20 +174,38 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_大哥滑动4","yd_wj_点波2"]
+        "next": [
+            "yd_wj_大哥滑动4",
+            "yd_wj_点波2"
+        ]
     },
-     "yd_wj_大哥滑动4": {
+    "yd_wj_大哥滑动4": {
         "recognition": "ColorMatch",
-        "roi": [172,375,10,67],
-        "lower":[250, 140, 0],
-        "upper":[255, 167, 18],
+        "roi": [
+            172,
+            375,
+            10,
+            67
+        ],
+        "lower": [
+            250,
+            140,
+            0
+        ],
+        "upper": [
+            255,
+            167,
+            18
+        ],
         "action": "Swipe",
         "begin": "卡槽3",
         "end": "1-2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_原豌滑动4"]
+        "next": [
+            "yd_wj_原豌滑动4"
+        ]
     },
     "yd_wj_原豌滑动4": {
         "recognition": "DirectHit",
@@ -145,22 +215,39 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_大哥滑动5","yd_wj_点波2"]
+        "next": [
+            "yd_wj_大哥滑动5",
+            "yd_wj_点波2"
+        ]
     },
     "yd_wj_大哥滑动5": {
         "recognition": "ColorMatch",
-        "roi": [172,375,10,67],
-        "lower":[250, 140, 0],
-        "upper":[255, 167, 18],
+        "roi": [
+            172,
+            375,
+            10,
+            67
+        ],
+        "lower": [
+            250,
+            140,
+            0
+        ],
+        "upper": [
+            255,
+            167,
+            18
+        ],
         "action": "Swipe",
         "begin": "卡槽3",
         "end": "1-1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_原豌滑动5"]
+        "next": [
+            "yd_wj_原豌滑动5"
+        ]
     },
-    
     "yd_wj_原豌滑动5": {
         "recognition": "DirectHit",
         "action": "Swipe",
@@ -169,26 +256,142 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_点波2"]
+        "next": [
+            "yd_wj_点波2"
+        ]
     },
     "yd_wj_点波2": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [1853, 325],
+        "target": [
+            1853,
+            325
+        ],
         "repeat": 2,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_识别结算","yd_wj_自选滑动"]
+        "next": [
+            "yd_wj_识别结算",
+            "yd_wj_芦荟滑动1"
+        ]
     },
-    "yd_wj_自选滑动": {
-        "recognition": "DirectHit",
+    "yd_wj_卡7_补植物1": {
         "action": "Swipe",
         "begin": "卡槽7",
-        "end": "5-3",
-        "duration": 100,
+        "end": [],
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_芦荟滑动1"]
+        "duration": 100,
+        "next": [
+            "yd_wj_卡7_补植物2"
+        ]
+    },
+    "yd_wj_卡7_补植物2": {
+        "action": "Swipe",
+        "begin": "卡槽7",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_卡7_补植物3"
+        ]
+    },
+    "yd_wj_卡7_补植物3": {
+        "action": "Swipe",
+        "begin": "卡槽7",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_卡7_补植物4"
+        ]
+    },
+    "yd_wj_卡7_补植物4": {
+        "action": "Swipe",
+        "begin": "卡槽7",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_卡7_补植物5"
+        ]
+    },
+    "yd_wj_卡7_补植物5": {
+        "action": "Swipe",
+        "begin": "卡槽7",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_卡8_过渡"
+        ]
+    },
+    "yd_wj_卡8_过渡": {
+        "action": "DoNothing",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "yd_wj_卡8_补植物1"
+        ]
+    },
+    "yd_wj_卡8_补植物1": {
+        "action": "Swipe",
+        "begin": "卡槽8",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_卡8_补植物2"
+        ]
+    },
+    "yd_wj_卡8_补植物2": {
+        "action": "Swipe",
+        "begin": "卡槽8",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_卡8_补植物3"
+        ]
+    },
+    "yd_wj_卡8_补植物3": {
+        "action": "Swipe",
+        "begin": "卡槽8",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_卡8_补植物4"
+        ]
+    },
+    "yd_wj_卡8_补植物4": {
+        "action": "Swipe",
+        "begin": "卡槽8",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_卡8_补植物5"
+        ]
+    },
+    "yd_wj_卡8_补植物5": {
+        "action": "Swipe",
+        "begin": "卡槽8",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "yd_wj_芦荟滑动1"
+        ]
     },
     "yd_wj_芦荟滑动1": {
         "recognition": "DirectHit",
@@ -198,9 +401,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_芦荟滑动2"]
+        "next": [
+            "yd_wj_芦荟滑动3-5"
+        ]
     },
-    "yd_wj_芦荟滑动2": {
+    "yd_wj_芦荟滑动3-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽6",
@@ -208,9 +413,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_芦荟滑动3"]
+        "next": [
+            "yd_wj_芦荟滑动6-1"
+        ]
     },
-    "yd_wj_芦荟滑动3": {
+    "yd_wj_芦荟滑动6-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽6",
@@ -218,9 +425,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_芦荟滑动4"]
+        "next": [
+            "yd_wj_芦荟滑动6-4"
+        ]
     },
-    "yd_wj_芦荟滑动4": {
+    "yd_wj_芦荟滑动6-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽6",
@@ -228,9 +437,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动1"]
+        "next": [
+            "yd_wj_桑葚滑动2-1"
+        ]
     },
-    "yd_wj_桑葚滑动1": {
+    "yd_wj_桑葚滑动2-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -238,9 +449,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动2"]
+        "next": [
+            "yd_wj_桑葚滑动2-2"
+        ]
     },
-    "yd_wj_桑葚滑动2": {
+    "yd_wj_桑葚滑动2-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -248,9 +461,12 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_识别结算","yd_wj_桑葚滑动3"]
+        "next": [
+            "yd_wj_识别结算",
+            "yd_wj_桑葚滑动2-3"
+        ]
     },
-    "yd_wj_桑葚滑动3": {
+    "yd_wj_桑葚滑动2-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -258,9 +474,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动4"]
+        "next": [
+            "yd_wj_桑葚滑动2-4"
+        ]
     },
-    "yd_wj_桑葚滑动4": {
+    "yd_wj_桑葚滑动2-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -268,9 +486,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动5"]
+        "next": [
+            "yd_wj_桑葚滑动2-5"
+        ]
     },
-    "yd_wj_桑葚滑动5": {
+    "yd_wj_桑葚滑动2-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -278,9 +498,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动6"]
+        "next": [
+            "yd_wj_桑葚滑动3-1"
+        ]
     },
-    "yd_wj_桑葚滑动6": {
+    "yd_wj_桑葚滑动3-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -288,9 +510,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动7"]
+        "next": [
+            "yd_wj_桑葚滑动3-3"
+        ]
     },
-    "yd_wj_桑葚滑动7": {
+    "yd_wj_桑葚滑动3-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -298,9 +522,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动8"]
+        "next": [
+            "yd_wj_桑葚滑动3-4"
+        ]
     },
-    "yd_wj_桑葚滑动8": {
+    "yd_wj_桑葚滑动3-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -308,9 +534,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动9"]
+        "next": [
+            "yd_wj_桑葚滑动4-1"
+        ]
     },
-    "yd_wj_桑葚滑动9": {
+    "yd_wj_桑葚滑动4-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -318,9 +546,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动10"]
+        "next": [
+            "yd_wj_桑葚滑动4-2"
+        ]
     },
-    "yd_wj_桑葚滑动10": {
+    "yd_wj_桑葚滑动4-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -328,9 +558,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动11"]
+        "next": [
+            "yd_wj_桑葚滑动4-3"
+        ]
     },
-    "yd_wj_桑葚滑动11": {
+    "yd_wj_桑葚滑动4-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -338,9 +570,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动12"]
+        "next": [
+            "yd_wj_桑葚滑动4-4"
+        ]
     },
-    "yd_wj_桑葚滑动12": {
+    "yd_wj_桑葚滑动4-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -348,9 +582,12 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_识别结算","yd_wj_桑葚滑动13"]
+        "next": [
+            "yd_wj_识别结算",
+            "yd_wj_桑葚滑动4-5"
+        ]
     },
-    "yd_wj_桑葚滑动13": {
+    "yd_wj_桑葚滑动4-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -358,9 +595,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动14"]
+        "next": [
+            "yd_wj_桑葚滑动5-1"
+        ]
     },
-    "yd_wj_桑葚滑动14": {
+    "yd_wj_桑葚滑动5-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -368,9 +607,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动15"]
+        "next": [
+            "yd_wj_桑葚滑动5-2"
+        ]
     },
-    "yd_wj_桑葚滑动15": {
+    "yd_wj_桑葚滑动5-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -378,9 +619,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动16"]
+        "next": [
+            "yd_wj_桑葚滑动5-3"
+        ]
     },
-    "yd_wj_桑葚滑动16": {
+    "yd_wj_桑葚滑动5-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -388,9 +631,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动17"]
+        "next": [
+            "yd_wj_桑葚滑动5-4"
+        ]
     },
-    "yd_wj_桑葚滑动17": {
+    "yd_wj_桑葚滑动5-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -398,9 +643,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动18"]
+        "next": [
+            "yd_wj_桑葚滑动5-5"
+        ]
     },
-    "yd_wj_桑葚滑动18": {
+    "yd_wj_桑葚滑动5-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -408,9 +655,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动19"]
+        "next": [
+            "yd_wj_桑葚滑动6-2"
+        ]
     },
-    "yd_wj_桑葚滑动19": {
+    "yd_wj_桑葚滑动6-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -418,9 +667,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动20"]
+        "next": [
+            "yd_wj_桑葚滑动6-3"
+        ]
     },
-    "yd_wj_桑葚滑动20": {
+    "yd_wj_桑葚滑动6-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -428,9 +679,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动21"]
+        "next": [
+            "yd_wj_桑葚滑动6-5"
+        ]
     },
-    "yd_wj_桑葚滑动21": {
+    "yd_wj_桑葚滑动6-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -438,9 +691,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动22"]
+        "next": [
+            "yd_wj_桑葚滑动7-1"
+        ]
     },
-    "yd_wj_桑葚滑动22": {
+    "yd_wj_桑葚滑动7-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -448,9 +703,12 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_识别结算","yd_wj_桑葚滑动23"]
+        "next": [
+            "yd_wj_识别结算",
+            "yd_wj_桑葚滑动7-2"
+        ]
     },
-    "yd_wj_桑葚滑动23": {
+    "yd_wj_桑葚滑动7-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -458,9 +716,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动24"]
+        "next": [
+            "yd_wj_桑葚滑动7-3"
+        ]
     },
-    "yd_wj_桑葚滑动24": {
+    "yd_wj_桑葚滑动7-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -468,9 +728,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动25"]
+        "next": [
+            "yd_wj_桑葚滑动7-4"
+        ]
     },
-    "yd_wj_桑葚滑动25": {
+    "yd_wj_桑葚滑动7-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -478,9 +740,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_桑葚滑动26"]
+        "next": [
+            "yd_wj_桑葚滑动7-5"
+        ]
     },
-    "yd_wj_桑葚滑动26": {
+    "yd_wj_桑葚滑动7-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽2",
@@ -488,9 +752,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动1"]
+        "next": [
+            "yd_wj_毒藤滑动2-1"
+        ]
     },
-    "yd_wj_毒藤滑动1": {
+    "yd_wj_毒藤滑动2-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -498,9 +764,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动2"]
+        "next": [
+            "yd_wj_毒藤滑动2-2"
+        ]
     },
-    "yd_wj_毒藤滑动2": {
+    "yd_wj_毒藤滑动2-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -508,9 +776,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动3"]
+        "next": [
+            "yd_wj_毒藤滑动2-3"
+        ]
     },
-    "yd_wj_毒藤滑动3": {
+    "yd_wj_毒藤滑动2-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -518,9 +788,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动4"]
+        "next": [
+            "yd_wj_毒藤滑动2-4"
+        ]
     },
-    "yd_wj_毒藤滑动4": {
+    "yd_wj_毒藤滑动2-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -528,9 +800,12 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_识别结算","yd_wj_毒藤滑动5"]
+        "next": [
+            "yd_wj_识别结算",
+            "yd_wj_毒藤滑动2-5"
+        ]
     },
-    "yd_wj_毒藤滑动5": {
+    "yd_wj_毒藤滑动2-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -538,9 +813,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动6"]
+        "next": [
+            "yd_wj_毒藤滑动3-1"
+        ]
     },
-    "yd_wj_毒藤滑动6": {
+    "yd_wj_毒藤滑动3-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -548,9 +825,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动7"]
+        "next": [
+            "yd_wj_毒藤滑动3-3"
+        ]
     },
-    "yd_wj_毒藤滑动7": {
+    "yd_wj_毒藤滑动3-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -558,9 +837,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动8"]
+        "next": [
+            "yd_wj_毒藤滑动3-4"
+        ]
     },
-    "yd_wj_毒藤滑动8": {
+    "yd_wj_毒藤滑动3-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -568,9 +849,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动9"]
+        "next": [
+            "yd_wj_毒藤滑动4-1"
+        ]
     },
-    "yd_wj_毒藤滑动9": {
+    "yd_wj_毒藤滑动4-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -578,9 +861,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动10"]
+        "next": [
+            "yd_wj_毒藤滑动4-2"
+        ]
     },
-    "yd_wj_毒藤滑动10": {
+    "yd_wj_毒藤滑动4-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -588,9 +873,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动11"]
+        "next": [
+            "yd_wj_毒藤滑动4-3"
+        ]
     },
-    "yd_wj_毒藤滑动11": {
+    "yd_wj_毒藤滑动4-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -598,9 +885,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动12"]
+        "next": [
+            "yd_wj_毒藤滑动4-4"
+        ]
     },
-    "yd_wj_毒藤滑动12": {
+    "yd_wj_毒藤滑动4-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -608,9 +897,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动13"]
+        "next": [
+            "yd_wj_毒藤滑动4-5"
+        ]
     },
-    "yd_wj_毒藤滑动13": {
+    "yd_wj_毒藤滑动4-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -618,9 +909,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动14"]
+        "next": [
+            "yd_wj_毒藤滑动5-1"
+        ]
     },
-    "yd_wj_毒藤滑动14": {
+    "yd_wj_毒藤滑动5-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -628,9 +921,12 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_识别结算","yd_wj_毒藤滑动15"]
+        "next": [
+            "yd_wj_识别结算",
+            "yd_wj_毒藤滑动5-2"
+        ]
     },
-    "yd_wj_毒藤滑动15": {
+    "yd_wj_毒藤滑动5-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -638,9 +934,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动16"]
+        "next": [
+            "yd_wj_毒藤滑动5-3"
+        ]
     },
-    "yd_wj_毒藤滑动16": {
+    "yd_wj_毒藤滑动5-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -648,9 +946,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动17"]
+        "next": [
+            "yd_wj_毒藤滑动5-4"
+        ]
     },
-    "yd_wj_毒藤滑动17": {
+    "yd_wj_毒藤滑动5-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -658,9 +958,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动18"]
+        "next": [
+            "yd_wj_毒藤滑动5-5"
+        ]
     },
-    "yd_wj_毒藤滑动18": {
+    "yd_wj_毒藤滑动5-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -668,9 +970,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动19"]
+        "next": [
+            "yd_wj_毒藤滑动6-2"
+        ]
     },
-    "yd_wj_毒藤滑动19": {
+    "yd_wj_毒藤滑动6-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -678,9 +982,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动20"]
+        "next": [
+            "yd_wj_毒藤滑动6-3"
+        ]
     },
-    "yd_wj_毒藤滑动20": {
+    "yd_wj_毒藤滑动6-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -688,9 +994,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动21"]
+        "next": [
+            "yd_wj_毒藤滑动6-5"
+        ]
     },
-    "yd_wj_毒藤滑动21": {
+    "yd_wj_毒藤滑动6-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -698,9 +1006,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动22"]
+        "next": [
+            "yd_wj_毒藤滑动7-1"
+        ]
     },
-    "yd_wj_毒藤滑动22": {
+    "yd_wj_毒藤滑动7-1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -708,9 +1018,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动23"]
+        "next": [
+            "yd_wj_毒藤滑动7-2"
+        ]
     },
-    "yd_wj_毒藤滑动23": {
+    "yd_wj_毒藤滑动7-2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -718,9 +1030,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动24"]
+        "next": [
+            "yd_wj_毒藤滑动7-3"
+        ]
     },
-    "yd_wj_毒藤滑动24": {
+    "yd_wj_毒藤滑动7-3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -728,9 +1042,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动25"]
+        "next": [
+            "yd_wj_毒藤滑动7-4"
+        ]
     },
-    "yd_wj_毒藤滑动25": {
+    "yd_wj_毒藤滑动7-4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -738,9 +1054,11 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_毒藤滑动26"]
+        "next": [
+            "yd_wj_毒藤滑动7-5"
+        ]
     },
-    "yd_wj_毒藤滑动26": {
+    "yd_wj_毒藤滑动7-5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "卡槽4",
@@ -748,114 +1066,226 @@
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_点波5"]
+        "next": [
+            "yd_wj_点波5"
+        ]
     },
     "yd_wj_点波5": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [1853, 325],
+        "target": [
+            1853,
+            325
+        ],
         "repeat": 2,
         "pre_delay": 0,
         "post_delay": 0,
-        "next": ["yd_wj_识别结算","yd_wj_识别开始战斗","yd_wj_识别boss关","yd_wj_点波1"]
+        "next": [
+            "yd_wj_识别结算",
+            "yd_wj_识别开始战斗",
+            "yd_wj_识别boss关",
+            "yd_wj_点波1"
+        ]
     },
     "yd_wj_识别结算": {
-    "recognition": "OCR",
-    "roi": [1074,931,268,75],
-    "expected": "继续挑战",
-    "action": "Click",
-    "rate_limit": 1000,
-    "timeout": -1,
-    "next": ["yd_wj_过渡"]
+        "recognition": "OCR",
+        "roi": [
+            1074,
+            931,
+            268,
+            75
+        ],
+        "expected": "继续挑战",
+        "action": "Click",
+        "rate_limit": 1000,
+        "timeout": -1,
+        "next": [
+            "yd_wj_过渡"
+        ]
     },
     "yd_wj_过渡": {
-    "action": "DoNothing",
-    "timeout": -1,
-    "next": ["yd_wj_识别开始战斗","yd_wj_识别boss关"]
+        "action": "DoNothing",
+        "timeout": -1,
+        "next": [
+            "yd_wj_识别开始战斗",
+            "yd_wj_识别boss关"
+        ]
     },
-
     "yd_wj_识别boss关": {
-    "recognition": "ColorMatch",
-    "lower": [148, 213, 8], 
-    "upper": [168, 233, 28],
-    "roi": [1085,84,26,33],
-    "rate_limit": 10,
-    "next": ["yd_wj_补给"]
+        "recognition": "ColorMatch",
+        "lower": [
+            148,
+            213,
+            8
+        ],
+        "upper": [
+            168,
+            233,
+            28
+        ],
+        "roi": [
+            1085,
+            84,
+            26,
+            33
+        ],
+        "rate_limit": 10,
+        "next": [
+            "yd_wj_补给"
+        ]
     },
-     "yd_wj_补给": {
-    "recognition": "ColorMatch",
-    "lower": [148, 213, 8], 
-    "upper": [168, 233, 28],
-    "roi": [1085,84,26,33],
-    "rate_limit": 10,
-    "action": "Click",
-    "target": [392,562],
-    "next": ["yd_wj_确定1"]
+    "yd_wj_补给": {
+        "recognition": "ColorMatch",
+        "lower": [
+            148,
+            213,
+            8
+        ],
+        "upper": [
+            168,
+            233,
+            28
+        ],
+        "roi": [
+            1085,
+            84,
+            26,
+            33
+        ],
+        "rate_limit": 10,
+        "action": "Click",
+        "target": [
+            392,
+            562
+        ],
+        "next": [
+            "yd_wj_确定1"
+        ]
     },
     "yd_wj_确定1": {
-    "action": "Click",
-    "target": [950,921],
-    "next": ["yd_wj_提示","yd_wj_确定3"]
+        "action": "Click",
+        "target": [
+            950,
+            921
+        ],
+        "next": [
+            "yd_wj_提示",
+            "yd_wj_确定3"
+        ]
     },
     "yd_wj_提示": {
-    "recognition":"OCR",
-    "expected": "提示",
-    "roi": [843,363,142,74],
-    "action": "Click",
-    "target": [892,789],
-    "next": ["yd_wj_确定3"]
+        "recognition": "OCR",
+        "expected": "提示",
+        "roi": [
+            843,
+            363,
+            142,
+            74
+        ],
+        "action": "Click",
+        "target": [
+            892,
+            789
+        ],
+        "next": [
+            "yd_wj_确定3"
+        ]
     },
     "yd_wj_确定3": {
-    "action": "Click",
-    "target": [950,921],
-    "pre_delay": 1000,
-    "post_delay": 1000,
-    "next": ["yd_wj_确定4"]
+        "action": "Click",
+        "target": [
+            950,
+            921
+        ],
+        "pre_delay": 1000,
+        "post_delay": 1000,
+        "next": [
+            "yd_wj_确定4"
+        ]
     },
     "yd_wj_确定4": {
-    "action": "Click",
-    "target": [950,921],
-    "pre_delay": 1000,
-    "post_delay": 1000,
-    "next": ["yd_wj_boss_识别开始"]
+        "action": "Click",
+        "target": [
+            950,
+            921
+        ],
+        "pre_delay": 1000,
+        "post_delay": 1000,
+        "next": [
+            "yd_wj_boss_识别开始"
+        ]
     },
     "yd_wj_boss_识别开始": {
-    "recognition": "TemplateMatch",
-    "template": "xinta/开始战斗.png",
-    "roi": [1590, 970,301,88],
-    "threshold": 0.75,
-    "action": "Click",
-    "next": ["yd_wj_boss_判断是否进入关内"]
+        "recognition": "TemplateMatch",
+        "template": "xinta/开始战斗.png",
+        "roi": [
+            1590,
+            970,
+            301,
+            88
+        ],
+        "threshold": 0.75,
+        "action": "Click",
+        "next": [
+            "yd_wj_boss_判断是否进入关内"
+        ]
     },
     "yd_wj_boss_判断是否进入关内": {
-    "recognition": "ColorMatch",
-    "roi": [700,1004,40,40], 
-    "method": 4, 
-    "lower": [148, 213, 8], 
-    "upper": [168, 233, 28], 
-    "timeout": -1,
-    "action": "Click",
-    "target": [1757,56],
-    "next": ["yd_wj_boss_喂豆5-3"]
+        "recognition": "ColorMatch",
+        "roi": [
+            700,
+            1004,
+            40,
+            40
+        ],
+        "method": 4,
+        "lower": [
+            148,
+            213,
+            8
+        ],
+        "upper": [
+            168,
+            233,
+            28
+        ],
+        "timeout": -1,
+        "action": "Click",
+        "target": [
+            1757,
+            56
+        ],
+        "next": [
+            "yd_wj_boss_喂豆5-3"
+        ]
     },
     "yd_wj_boss_喂豆5-3": {
-    "action": "swipe",
-    "begin": "豆槽",
-    "end": "5-3",
-    "pre_delay": 100,
-    "post_delay": 3000,
-    "max_hit": -1,
-    "timeout":-1,
-    "duration": 100,
-    "next": ["yd_wj_boss_识别结算","yd_wj_boss_喂豆5-3"]
+        "action": "Swipe",
+        "begin": "豆槽",
+        "end": "5-3",
+        "pre_delay": 100,
+        "post_delay": 3000,
+        "timeout": -1,
+        "duration": 100,
+        "next": [
+            "yd_wj_boss_识别结算",
+            "yd_wj_boss_喂豆5-3"
+        ]
     },
     "yd_wj_boss_识别结算": {
-    "recognition": "OCR",
-    "roi": [1074,931,268,75],
-    "expected": "继续挑战",
-    "timeout":-1,
-    "rate_limit": 500,
-    "action": "Click",
-    "next": ["yd_wj_识别开始战斗"]
+        "recognition": "OCR",
+        "roi": [
+            1074,
+            931,
+            268,
+            75
+        ],
+        "expected": "继续挑战",
+        "timeout": -1,
+        "rate_limit": 500,
+        "action": "Click",
+        "next": [
+            "yd_wj_识别开始战斗"
+        ]
     }
 }

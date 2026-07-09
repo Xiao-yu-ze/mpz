@@ -6,14 +6,15 @@
             "option": [
                 "yd_初始化卡槽和草坪位置",
                 "yd_wj_boss关是否需要喂豆5-3",
+                "yd_wj_是否需要补植物",
                 "全局是否抛花",
                 "yd_无尽全自动循环"
             ]
         }
     ],
     "option": {
-        "yd_初始化卡槽和草坪位置":{
-            "type":"switch",
+        "yd_初始化卡槽和草坪位置": {
+            "type": "switch",
             "label": "初始化卡槽和草坪位置",
             "description": "一定要开哦",
             "cases": [
@@ -22,12 +23,15 @@
                     "label": "否",
                     "pipeline_override": {
                         "Yd_Wj_Entry": {
-                            "next": ["plant_初始化"]
+                            "next": [
+                                "plant_初始化"
+                            ]
                         },
                         "plant_初始化完毕": {
-                            "next": ["yd_wj_过渡"]
+                            "next": [
+                                "yd_wj_过渡"
+                            ]
                         }
-                        
                     }
                 },
                 {
@@ -35,18 +39,21 @@
                     "label": "是",
                     "pipeline_override": {
                         "Yd_Wj_Entry": {
-                            "next": ["plant_初始化"]
+                            "next": [
+                                "plant_初始化"
+                            ]
                         },
                         "plant_初始化完毕": {
-                            "next": ["yd_wj_过渡"]
+                            "next": [
+                                "yd_wj_过渡"
+                            ]
                         }
-                        
                     }
                 }
             ]
         },
-        "yd_无尽全自动循环":{
-            "type":"switch",
+        "yd_无尽全自动循环": {
+            "type": "switch",
             "label": "无尽全自动循环",
             "description": "打一遍后自动花钻石刷新重新打",
             "cases": [
@@ -59,11 +66,17 @@
                     "name": "Yes",
                     "label": "是",
                     "pipeline_override": {
-                        "yd_wj_过渡":{
-                            "next": ["yd_wj_识别开始战斗","yd_wj_识别boss关","wujin_返回"]
+                        "yd_wj_过渡": {
+                            "next": [
+                                "yd_wj_识别开始战斗",
+                                "yd_wj_识别boss关",
+                                "wujin_返回"
+                            ]
                         },
-                        "wujin_确定4":{
-                            "next": ["Yd_Wj_Entry"]
+                        "wujin_确定4": {
+                            "next": [
+                                "Yd_Wj_Entry"
+                            ]
                         }
                     }
                 }
@@ -79,7 +92,9 @@
                     "label": "否",
                     "pipeline_override": {
                         "yd_wj_boss_判断是否进入关内": {
-                            "next": ["yd_wj_boss_识别结算"]
+                            "next": [
+                                "yd_wj_boss_识别结算"
+                            ]
                         }
                     }
                 },
@@ -88,7 +103,3395 @@
                     "label": "是",
                     "pipeline_override": {
                         "yd_wj_boss_判断是否进入关内": {
-                            "next": ["yd_wj_boss_喂豆5-3"]
+                            "next": [
+                                "yd_wj_boss_喂豆5-3"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "yd_wj_是否需要补植物": {
+            "type": "switch",
+            "label": "是否需要补植物",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {},
+                    "option": [
+                        "卡槽7_补植物",
+                        "卡槽8_补植物"
+                    ]
+                }
+            ]
+        },
+        "卡槽7_补植物": {
+            "type": "switch",
+            "label": "卡槽7补植物位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_点波2": {
+                            "next": [
+                                "yd_wj_识别结算",
+                                "yd_wj_卡8_过渡"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "yd_wj_点波2": {
+                            "next": [
+                                "yd_wj_识别结算",
+                                "yd_wj_卡7_补植物1"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "卡槽7_1",
+                        "卡槽7_2",
+                        "卡槽7_3",
+                        "卡槽7_4",
+                        "卡槽7_5"
+                    ]
+                }
+            ]
+        },
+        "卡槽7_1": {
+            "type": "select",
+            "label": "第1个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物1": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽7_2": {
+            "type": "select",
+            "label": "第2个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物2": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽7_3": {
+            "type": "select",
+            "label": "第3个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物3": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽7_4": {
+            "type": "select",
+            "label": "第4个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物4": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽7_5": {
+            "type": "select",
+            "label": "第5个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡7_补植物5": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽8_补植物": {
+            "type": "switch",
+            "label": "卡槽8补植物位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡8_过渡": {
+                            "next": [
+                                "yd_wj_芦荟滑动1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {},
+                    "option": [
+                        "卡槽8_1",
+                        "卡槽8_2",
+                        "卡槽8_3",
+                        "卡槽8_4",
+                        "卡槽8_5"
+                    ]
+                }
+            ]
+        },
+        "卡槽8_1": {
+            "type": "select",
+            "label": "第1个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物1": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽8_2": {
+            "type": "select",
+            "label": "第2个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物2": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽8_3": {
+            "type": "select",
+            "label": "第3个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物3": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽8_4": {
+            "type": "select",
+            "label": "第4个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物4": {
+                            "end": "7-5"
+                        }
+                    }
+                }
+            ]
+        },
+        "卡槽8_5": {
+            "type": "select",
+            "label": "第5个植物补哪",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "1-1",
+                    "label": "1-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "1-1"
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "1-2"
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "1-3"
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "1-4"
+                        }
+                    }
+                },
+                {
+                    "name": "1-5",
+                    "label": "1-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "1-5"
+                        }
+                    }
+                },
+                {
+                    "name": "2-1",
+                    "label": "2-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "2-1"
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "2-2"
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "2-3"
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "2-4"
+                        }
+                    }
+                },
+                {
+                    "name": "2-5",
+                    "label": "2-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "2-5"
+                        }
+                    }
+                },
+                {
+                    "name": "3-1",
+                    "label": "3-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "3-1"
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "3-2"
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "3-3"
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "3-4"
+                        }
+                    }
+                },
+                {
+                    "name": "3-5",
+                    "label": "3-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "3-5"
+                        }
+                    }
+                },
+                {
+                    "name": "4-1",
+                    "label": "4-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "4-1"
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "4-2"
+                        }
+                    }
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "4-3"
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "4-4"
+                        }
+                    }
+                },
+                {
+                    "name": "4-5",
+                    "label": "4-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "4-5"
+                        }
+                    }
+                },
+                {
+                    "name": "5-1",
+                    "label": "5-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "5-1"
+                        }
+                    }
+                },
+                {
+                    "name": "5-2",
+                    "label": "5-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "5-2"
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "5-3"
+                        }
+                    }
+                },
+                {
+                    "name": "5-4",
+                    "label": "5-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "5-4"
+                        }
+                    }
+                },
+                {
+                    "name": "5-5",
+                    "label": "5-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "5-5"
+                        }
+                    }
+                },
+                {
+                    "name": "6-1",
+                    "label": "6-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "6-1"
+                        }
+                    }
+                },
+                {
+                    "name": "6-2",
+                    "label": "6-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "6-2"
+                        }
+                    }
+                },
+                {
+                    "name": "6-3",
+                    "label": "6-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "6-3"
+                        }
+                    }
+                },
+                {
+                    "name": "6-4",
+                    "label": "6-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "6-4"
+                        }
+                    }
+                },
+                {
+                    "name": "6-5",
+                    "label": "6-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "6-5"
+                        }
+                    }
+                },
+                {
+                    "name": "7-1",
+                    "label": "7-1",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "7-1"
+                        }
+                    }
+                },
+                {
+                    "name": "7-2",
+                    "label": "7-2",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "7-2"
+                        }
+                    }
+                },
+                {
+                    "name": "7-3",
+                    "label": "7-3",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "7-3"
+                        }
+                    }
+                },
+                {
+                    "name": "7-4",
+                    "label": "7-4",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "7-4"
+                        }
+                    }
+                },
+                {
+                    "name": "7-5",
+                    "label": "7-5",
+                    "pipeline_override": {
+                        "yd_wj_卡8_补植物5": {
+                            "end": "7-5"
                         }
                     }
                 }
