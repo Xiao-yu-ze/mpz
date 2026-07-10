@@ -1131,20 +1131,154 @@
         ],
         "rate_limit": 10,
         "next": [
+            "yd_wj_神器补给_查看"
+        ]
+    },
+    "yd_wj_神器补给_查看": {
+        "action": "Click",
+        "target": [
+            1499,
+            526,
+            17,
+            43
+        ],
+        "pre_delay": 2000,
+        "next": [
+            "yd_wj_神器补给_判断是否有神器"
+        ]
+    },
+    "yd_wj_神器补给_判断是否有神器": {
+        "action": "DoNothing",
+        "pre_delay": 1000,
+        "post_delay": 0,
+        "next": [
+            //"yd_wj_神器补给_神器",
+            "yd_wj_神器补给_全部植物",
+            "yd_wj_神器补给_橙色植物",
+            "yd_wj_神器补给_蓝色植物",
+            "yd_wj_神器补给_紫色植物",
             "yd_wj_补给"
+        ]
+    },
+    "yd_wj_神器补给_神器": {
+        "recognition": "OCR",
+        "expected": "神器",
+        "roi": [
+            291,
+            356,
+            1364,
+            120
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "yd_wj_神器补给_确定1"
+        ]
+    },
+    "yd_wj_神器补给_全部植物": {
+        "recognition": "OCR",
+        "expected": "全部植物",
+        "roi": [
+            291,
+            356,
+            1364,
+            120
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "yd_wj_神器补给_确定1"
+        ]
+    },
+    "yd_wj_神器补给_橙色植物": {
+        "recognition": "OCR",
+        "expected": "橙色植物",
+        "roi": [
+            291,
+            356,
+            1364,
+            120
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "yd_wj_神器补给_确定1"
+        ]
+    },
+    "yd_wj_神器补给_蓝色植物": {
+        "recognition": "OCR",
+        "expected": "蓝色植物",
+        "roi": [
+            291,
+            356,
+            1364,
+            120
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "yd_wj_神器补给_确定1"
+        ]
+    },
+    "yd_wj_神器补给_紫色植物": {
+        "recognition": "OCR",
+        "expected": "紫色植物",
+        "roi": [
+            291,
+            356,
+            1364,
+            120
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "yd_wj_神器补给_确定1"
+        ]
+    },
+    "yd_wj_神器补给_确定1": {
+        "action": "Click",
+        "target": [
+            947,
+            914
+        ],
+        "pre_delay": 1000,
+        "next": [
+            "yd_wj_神器补给_确定2"
+        ]
+    },
+    "yd_wj_神器补给_确定2": {
+        "action": "Click",
+        "target": [
+            947,
+            914
+        ],
+        "pre_delay": 2000,
+        "next": [
+            "yd_wj_神器补给_确定3"
+        ]
+    },
+    "yd_wj_神器补给_确定3": {
+        "action": "Click",
+        "target": [
+            947,
+            914
+        ],
+        "pre_delay": 2000,
+        "next": [
+            "yd_wj_boss_识别开始"
         ]
     },
     "yd_wj_补给": {
         "recognition": "ColorMatch",
         "lower": [
-            148,
+            146,
             213,
-            8
+            6
         ],
         "upper": [
-            168,
+            166,
             233,
-            28
+            26
         ],
         "roi": [
             1085,
@@ -1209,6 +1343,7 @@
             950,
             921
         ],
+        "repeat": 3,
         "pre_delay": 1000,
         "post_delay": 1000,
         "next": [
