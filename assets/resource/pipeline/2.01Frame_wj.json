@@ -1153,6 +1153,15 @@
             "frame_wj_boss_喂豆5-3"
         ]
     },
+    "frame_wj_boss_判断是否开启相机神器": {
+        "action": "DoNothing",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_boss_过渡_相机神器2",
+            "frame_wj_boss_判断是否开启相机神器"
+        ]
+    },
     "frame_wj_boss_过渡_相机神器2": {
         "recognition": "ColorMatch",
         "roi": [

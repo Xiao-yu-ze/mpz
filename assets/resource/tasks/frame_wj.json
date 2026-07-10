@@ -1,5 +1,5 @@
 {
-"task": [
+    "task": [
         {
             "name": "无尽挂机脚本框架",
             "entry": "Frame_Wj_Entry",
@@ -18,8 +18,8 @@
             ]
         }
     ],
-"option":{
-    "是否魔甘收尾(牢玩家专属)": {
+    "option": {
+        "是否魔甘收尾(牢玩家专属)": {
             "type": "switch",
             "label": "是否魔甘收尾(牢玩家专属)",
             "cases": [
@@ -27,21 +27,21 @@
                     "name": "No",
                     "label": "否",
                     "pipeline_override": {}
-                    
                 },
                 {
-                    "name":"Yes",
-                    "label":"是",
+                    "name": "Yes",
+                    "label": "是",
                     "pipeline_override": {
-                        "frame_wj_划飞弹":{
-                            "next":["判断是否魔甘收尾"]
+                        "frame_wj_划飞弹": {
+                            "next": [
+                                "判断是否魔甘收尾"
+                            ]
                         }
                     }
                 }
-                
             ]
-    },
-    "fw_boss_是否开相机神器": {
+        },
+        "fw_boss_是否开相机神器": {
             "type": "switch",
             "label": "boss关是否开相机神器复原植物",
             "cases": [
@@ -49,60 +49,96 @@
                     "name": "No",
                     "label": "否",
                     "pipeline_override": {
-                        "frame_wj_boss_过渡_相机神器1":{
-                            "next":["frame_wj_boss_过渡"]
+                        "frame_wj_boss_过渡_相机神器1": {
+                            "next": [
+                                "frame_wj_boss_过渡"
+                            ]
+                        },
+                        "frame_wj_boss_判断是否开启相机神器": {
+                            "next": [
+                                "frame_wj_boss_识别结算"
+                            ]
                         }
                     }
                 },
                 {
-                    "name":"Yes",
-                    "label":"是",
+                    "name": "Yes",
+                    "label": "是",
                     "pipeline_override": {
-                        "frame_wj_boss_过渡_相机神器1":{
-                            "next":["frame_wj_boss_相机神器_复制1"]
+                        "frame_wj_boss_喂豆5-3": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆5-3"
+                            ]
                         },
-                        "frame_wj_boss_喂豆5-3":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆5-3"]
+                        "frame_wj_boss_喂豆4-3": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆4-3"
+                            ]
                         },
-                        "frame_wj_boss_喂豆4-3":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆4-3"]
+                        "frame_wj_boss_喂豆3-3": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆3-3"
+                            ]
                         },
-                        "frame_wj_boss_喂豆3-3":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆3-3"]
+                        "frame_wj_boss_喂豆2-3": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆2-3"
+                            ]
                         },
-                        "frame_wj_boss_喂豆2-3":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆2-3"]
+                        "frame_wj_boss_喂豆1-3": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆1-3"
+                            ]
                         },
-                        "frame_wj_boss_喂豆1-3":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆1-3"]
+                        "frame_wj_boss_喂豆6-2": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆6-2"
+                            ]
                         },
-                        "frame_wj_boss_喂豆6-2":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆6-2"]
+                        "frame_wj_boss_喂豆5-2": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆5-2"
+                            ]
                         },
-                        "frame_wj_boss_喂豆5-2":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆5-2"]
+                        "frame_wj_boss_喂豆4-2": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆4-2"
+                            ]
                         },
-                        "frame_wj_boss_喂豆4-2":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆4-2"]
+                        "frame_wj_boss_喂豆6-4": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆6-4"
+                            ]
                         },
-                        "frame_wj_boss_喂豆6-4":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆6-4"]
+                        "frame_wj_boss_喂豆5-4": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆5-4"
+                            ]
                         },
-                        "frame_wj_boss_喂豆5-4":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆5-4"]
-                        },
-                        "frame_wj_boss_喂豆4-4":{
-                            "next":["frame_wj_boss_过渡_相机神器2","frame_wj_boss_喂豆4-4"]
+                        "frame_wj_boss_喂豆4-4": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆4-4"
+                            ]
                         }
                     }
                 }
-                
             ]
         },
         "fw_boss_补给智能选取": {
             "type": "switch",
             "label": "补给智能选取",
-            "description":"优先级: 神器->全部植物->橙色植物->蓝色植物->紫色植物",
+            "description": "优先级: 神器->全部植物->橙色植物->蓝色植物->紫色植物",
             "cases": [
                 {
                     "name": "No",
@@ -110,15 +146,16 @@
                     "pipeline_override": {}
                 },
                 {
-                    "name":"Yes",
-                    "label":"是",
+                    "name": "Yes",
+                    "label": "是",
                     "pipeline_override": {
-                        "frame_wj_识别boss关":{
-                            "next":["frame_wj_神器补给_查看"]
+                        "frame_wj_识别boss关": {
+                            "next": [
+                                "frame_wj_神器补给_查看"
+                            ]
                         }
                     }
                 }
-                
             ]
         },
         "fw_boss关是否需要喂豆": {
@@ -129,52 +166,54 @@
                     "name": "No",
                     "label": "否",
                     "pipeline_override": {
-                        "frame_wj_boss_过渡":{
-                            "next":["frame_wj_boss_识别结算"]
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_判断是否开启相机神器"
+                            ]
                         }
                     }
                 },
                 {
-                    "name":"Yes",
-                    "label":"是",
-                    "option":[
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
                         "fw_boss关喂豆位置",
                         "fw_boss关喂豆间隔"
                     ]
                 }
-                
             ]
         },
-        "fw_boss关是否加速":{
-            "type":"switch",
-            "label":"boss关是否加速",
-            "cases":[
-            {
-                "name":"No",
-                "label":"否",
-                "pipeline_override":{
-                    "frame_wj_boss_判断是否进入关内":{
-                        "action":"DoNothing",
-                        "next": ["frame_wj_boss_抛花1"]
+        "fw_boss关是否加速": {
+            "type": "switch",
+            "label": "boss关是否加速",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_boss_判断是否进入关内": {
+                            "action": "DoNothing",
+                            "next": [
+                                "frame_wj_boss_抛花1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "frame_wj_boss_判断是否进入关内": {
+                            "action": "click"
+                        }
                     }
                 }
-            },
-            {
-                "name":"Yes",
-                "label":"是",
-                "pipeline_override":{
-                    "frame_wj_boss_判断是否进入关内":{
-                        "action":"click"
-                    }
-                }
-            }  
             ]
-
         },
-        "fw_boss关喂豆间隔":{
-            "type":"select",
-            "label":"boss关喂豆间隔",
-            "cases":[
+        "fw_boss关喂豆间隔": {
+            "type": "select",
+            "label": "boss关喂豆间隔",
+            "cases": [
                 {
                     "name": "2秒",
                     "label": "2秒",
@@ -469,14 +508,12 @@
                         }
                     }
                 }
-
             ]
-
         },
-        "fw_boss关喂豆位置":{
-            "type":"select",
-            "label":"boss关喂豆位置",
-            "cases":[
+        "fw_boss关喂豆位置": {
+            "type": "select",
+            "label": "boss关喂豆位置",
+            "cases": [
                 {
                     "name": "1-3",
                     "label": "1-3",
@@ -609,10 +646,7 @@
                         }
                     }
                 }
-
             ]
         }
-
-
-}
+    }
 }
