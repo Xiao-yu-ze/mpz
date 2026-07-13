@@ -5,6 +5,7 @@
             "entry": "Frame_Wj_Entry",
             "description": "脚本只负责点开始游戏,继续挑战,加速,补给等操作,可以摆自己设计的挂机阵,脚本默认开启划飞弹和点波,布好阵了在开脚本,不然种不了植物(详细的功能介绍见公告:设置->关于我们->显示公告)",
             "option": [
+                "fw_初始化卡槽和草坪位置",
                 "小关是否喂豆",
                 "全局是否抛花",
                 "fw_boss关是否需要喂豆",
@@ -19,6 +20,45 @@
         }
     ],
     "option": {
+        "fw_初始化卡槽和草坪位置": {
+            "type": "switch",
+            "label": "初始化卡槽和草坪位置",
+            "description": "一定要开哦",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "Frame_Wj_Entry": {
+                            "next": [
+                                "plant_初始化"
+                            ]
+                        },
+                        "plant_初始化完毕": {
+                            "next": [
+                                "frame_wj_过渡"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "Yd_Wj_Entry": {
+                            "next": [
+                                "plant_初始化"
+                            ]
+                        },
+                        "plant_初始化完毕": {
+                            "next": [
+                                "yd_wj_过渡"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "是否魔甘收尾(牢玩家专属)": {
             "type": "switch",
             "label": "是否魔甘收尾(牢玩家专属)",
