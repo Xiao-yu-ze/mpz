@@ -81,7 +81,7 @@
     "小关": {
         "recognition": "DirectHit",
         "action": "DoNothing",
-        "post_delay":1000,
+        "post_delay": 1000,
         "next": [
             "小怪_点波1"
         ],
@@ -203,30 +203,54 @@
     },
     "digong_2_阳光收集1": {
         "action": "Swipe",
-        "begin":[1234,151],
-        "end":[1257,893],
-        "duration":100,
+        "begin": [
+            1234,
+            151
+        ],
+        "end": [
+            1257,
+            893
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集1_2"]
+        "next": [
+            "digong_2_阳光收集1_2"
+        ]
     },
     "digong_2_阳光收集1_2": {
         "action": "Swipe",
-        "begin":[1386,203],
-        "end":[1392,886],
-        "duration":100,
+        "begin": [
+            1386,
+            203
+        ],
+        "end": [
+            1392,
+            886
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集1_3"]
+        "next": [
+            "digong_2_阳光收集1_3"
+        ]
     },
     "digong_2_阳光收集1_3": {
         "action": "Swipe",
-        "begin":[1540,218],
-        "end":[1553,910],
-        "duration":100,
+        "begin": [
+            1540,
+            218
+        ],
+        "end": [
+            1553,
+            910
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "小怪_检查1_6"]
+        "next": [
+            "小怪_检查1_6"
+        ]
     },
     "小怪_检查1_6": {
         "recognition": "DirectHit",
@@ -389,30 +413,54 @@
     },
     "digong_2_阳光收集2": {
         "action": "Swipe",
-        "begin":[1234,151],
-        "end":[1257,893],
-        "duration":100,
+        "begin": [
+            1234,
+            151
+        ],
+        "end": [
+            1257,
+            893
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集2_2"]
+        "next": [
+            "digong_2_阳光收集2_2"
+        ]
     },
     "digong_2_阳光收集2_2": {
         "action": "Swipe",
-        "begin":[1386,203],
-        "end":[1392,886],
-        "duration":100,
+        "begin": [
+            1386,
+            203
+        ],
+        "end": [
+            1392,
+            886
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集2_3"]
+        "next": [
+            "digong_2_阳光收集2_3"
+        ]
     },
     "digong_2_阳光收集2_3": {
         "action": "Swipe",
-        "begin":[1540,218],
-        "end":[1553,910],
-        "duration":100,
+        "begin": [
+            1540,
+            218
+        ],
+        "end": [
+            1553,
+            910
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "小怪_滑动3_2"]
+        "next": [
+            "小怪_滑动3_2"
+        ]
     },
     "小怪_滑动3_2": {
         "action": "Swipe",
@@ -572,30 +620,54 @@
     },
     "digong_2_阳光收集3": {
         "action": "Swipe",
-        "begin":[1234,151],
-        "end":[1257,893],
-        "duration":100,
+        "begin": [
+            1234,
+            151
+        ],
+        "end": [
+            1257,
+            893
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集3_2"]
+        "next": [
+            "digong_2_阳光收集3_2"
+        ]
     },
     "digong_2_阳光收集3_2": {
         "action": "Swipe",
-        "begin":[1386,203],
-        "end":[1392,886],
-        "duration":100,
+        "begin": [
+            1386,
+            203
+        ],
+        "end": [
+            1392,
+            886
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集3_3"]
+        "next": [
+            "digong_2_阳光收集3_3"
+        ]
     },
     "digong_2_阳光收集3_3": {
         "action": "Swipe",
-        "begin":[1540,218],
-        "end":[1553,910],
-        "duration":100,
+        "begin": [
+            1540,
+            218
+        ],
+        "end": [
+            1553,
+            910
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": ["小怪_滑动4_4"]
+        "next": [
+            "小怪_滑动4_4"
+        ]
     },
     "小怪_滑动4_4": {
         "action": "Swipe",
@@ -628,14 +700,28 @@
         "post_delay": 0,
         "pre_delay": 0,
         "next": [
-            "婆罗_滑动1"
+            "婆罗_滑动1",
+            "开始"
         ]
     },
     "婆罗_滑动1": {
         "recognition": "ColorMatch",
-        "roi": [172,556,7,96],
-        "lower": [179, 81, 255],
-        "upper": [181, 89, 255],
+        "roi": [
+            172,
+            556,
+            7,
+            96
+        ],
+        "lower": [
+            179,
+            81,
+            255
+        ],
+        "upper": [
+            181,
+            89,
+            255
+        ],
         "action": "Swipe",
         "begin": [
             86,
@@ -744,30 +830,54 @@
     },
     "digong_2_阳光收集4": {
         "action": "Swipe",
-        "begin":[1234,151],
-        "end":[1257,893],
-        "duration":100,
+        "begin": [
+            1234,
+            151
+        ],
+        "end": [
+            1257,
+            893
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集4_2"]
+        "next": [
+            "digong_2_阳光收集4_2"
+        ]
     },
     "digong_2_阳光收集4_2": {
         "action": "Swipe",
-        "begin":[1386,203],
-        "end":[1392,886],
-        "duration":100,
+        "begin": [
+            1386,
+            203
+        ],
+        "end": [
+            1392,
+            886
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集4_3"]
+        "next": [
+            "digong_2_阳光收集4_3"
+        ]
     },
     "digong_2_阳光收集4_3": {
         "action": "Swipe",
-        "begin":[1540,218],
-        "end":[1553,910],
-        "duration":100,
+        "begin": [
+            1540,
+            218
+        ],
+        "end": [
+            1553,
+            910
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": ["小怪_滑动5_4"]
+        "next": [
+            "小怪_滑动5_4"
+        ]
     },
     "小怪_滑动5_4": {
         "action": "Swipe",
@@ -927,30 +1037,54 @@
     },
     "digong_2_阳光收集5": {
         "action": "Swipe",
-        "begin":[1234,151],
-        "end":[1257,893],
-        "duration":100,
+        "begin": [
+            1234,
+            151
+        ],
+        "end": [
+            1257,
+            893
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集5_2"]
+        "next": [
+            "digong_2_阳光收集5_2"
+        ]
     },
     "digong_2_阳光收集5_2": {
         "action": "Swipe",
-        "begin":[1386,203],
-        "end":[1392,886],
-        "duration":100,
+        "begin": [
+            1386,
+            203
+        ],
+        "end": [
+            1392,
+            886
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集5_3"]
+        "next": [
+            "digong_2_阳光收集5_3"
+        ]
     },
     "digong_2_阳光收集5_3": {
         "action": "Swipe",
-        "begin":[1540,218],
-        "end":[1553,910],
-        "duration":100,
+        "begin": [
+            1540,
+            218
+        ],
+        "end": [
+            1553,
+            910
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": ["小怪_检查6_5"]
+        "next": [
+            "小怪_检查6_5"
+        ]
     },
     "小怪_检查6_5": {
         "recognition": "DirectHit",
@@ -1096,30 +1230,54 @@
     },
     "digong_2_阳光收集6": {
         "action": "Swipe",
-        "begin":[1234,151],
-        "end":[1257,893],
-        "duration":100,
+        "begin": [
+            1234,
+            151
+        ],
+        "end": [
+            1257,
+            893
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集6_2"]
+        "next": [
+            "digong_2_阳光收集6_2"
+        ]
     },
     "digong_2_阳光收集6_2": {
         "action": "Swipe",
-        "begin":[1386,203],
-        "end":[1392,886],
-        "duration":100,
+        "begin": [
+            1386,
+            203
+        ],
+        "end": [
+            1392,
+            886
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集6_3"]
+        "next": [
+            "digong_2_阳光收集6_3"
+        ]
     },
     "digong_2_阳光收集6_3": {
         "action": "Swipe",
-        "begin":[1540,218],
-        "end":[1553,910],
-        "duration":100,
+        "begin": [
+            1540,
+            218
+        ],
+        "end": [
+            1553,
+            910
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": ["小怪_滑动8_2"]
+        "next": [
+            "小怪_滑动8_2"
+        ]
     },
     "小怪_滑动8_2": {
         "action": "Swipe",
@@ -1279,30 +1437,54 @@
     },
     "digong_2_阳光收集7": {
         "action": "Swipe",
-        "begin":[1234,151],
-        "end":[1257,893],
-        "duration":100,
+        "begin": [
+            1234,
+            151
+        ],
+        "end": [
+            1257,
+            893
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集7_2"]
+        "next": [
+            "digong_2_阳光收集7_2"
+        ]
     },
     "digong_2_阳光收集7_2": {
         "action": "Swipe",
-        "begin":[1386,203],
-        "end":[1392,886],
-        "duration":100,
+        "begin": [
+            1386,
+            203
+        ],
+        "end": [
+            1392,
+            886
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集7_3"]
+        "next": [
+            "digong_2_阳光收集7_3"
+        ]
     },
     "digong_2_阳光收集7_3": {
         "action": "Swipe",
-        "begin":[1540,218],
-        "end":[1553,910],
-        "duration":100,
+        "begin": [
+            1540,
+            218
+        ],
+        "end": [
+            1553,
+            910
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": ["小怪_滑动9_5"]
+        "next": [
+            "小怪_滑动9_5"
+        ]
     },
     "小怪_滑动9_5": {
         "action": "Swipe",
@@ -1553,30 +1735,54 @@
     },
     "digong_2_阳光收集8": {
         "action": "Swipe",
-        "begin":[1234,151],
-        "end":[1257,893],
-        "duration":100,
+        "begin": [
+            1234,
+            151
+        ],
+        "end": [
+            1257,
+            893
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集8_2"]
+        "next": [
+            "digong_2_阳光收集8_2"
+        ]
     },
     "digong_2_阳光收集8_2": {
         "action": "Swipe",
-        "begin":[1386,203],
-        "end":[1392,886],
-        "duration":100,
+        "begin": [
+            1386,
+            203
+        ],
+        "end": [
+            1392,
+            886
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": [ "digong_2_阳光收集8_3"]
+        "next": [
+            "digong_2_阳光收集8_3"
+        ]
     },
     "digong_2_阳光收集8_3": {
         "action": "Swipe",
-        "begin":[1540,218],
-        "end":[1553,910],
-        "duration":100,
+        "begin": [
+            1540,
+            218
+        ],
+        "end": [
+            1553,
+            910
+        ],
+        "duration": 100,
         "post_delay": 0,
         "pre_delay": 0,
-        "next": ["小怪_滑动12_2"]
+        "next": [
+            "小怪_滑动12_2"
+        ]
     },
     "小怪_滑动12_2": {
         "action": "Swipe",
@@ -2009,6 +2215,7 @@
         ],
         "post_delay": 8000,
         "duration": 100,
+        "timeout": -1,
         "pre_delay": 100,
         "next": [
             "boss_检查3"
