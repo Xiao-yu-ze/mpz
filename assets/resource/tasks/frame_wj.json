@@ -45,14 +45,14 @@
                     "name": "Yes",
                     "label": "是",
                     "pipeline_override": {
-                        "Yd_Wj_Entry": {
+                        "Frame_Wj_Entry": {
                             "next": [
                                 "plant_初始化"
                             ]
                         },
                         "plant_初始化完毕": {
                             "next": [
-                                "yd_wj_过渡"
+                                "frame_wj_过渡"
                             ]
                         }
                     }
