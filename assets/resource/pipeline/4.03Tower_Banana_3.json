@@ -1,87 +1,56 @@
 {
-    "tower_banana_后期":{
-    "action":"DoNothing",
-    "next": "tower_banana_喂豆气流"
+    "tower_banana_后期": {
+        "action": "DoNothing",
+        "next": "tower_banana_铲电大"
+    },
+    "tower_banana_铲电大": {
+        "action": "Swipe",
+        "begin": [
+            1834,
+            1018
+        ],
+        "end": [
+            839,
+            552
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "tower_banana_喂豆气流"
+        ]
     },
     "tower_banana_喂豆气流": {
-    "action": "swipe",
-    "begin": [723,1020],
-    "end": [972,548],
-    "pre_delay": 0,
-    "post_delay": 0,
-    "duration": 100,
-    "next": ["tower_banana_识别结算","tower_banana_划飞弹2"]
-    },
-    "tower_banana_划飞弹2": {
-    "action": "swipe",
-    "begin": [1360,649],
-    "end": [1744,685],
-    "repeat": 55,
-    "pre_delay": 0,
-    "post_delay": 0,
-    "repeat_delay": 0,
-    "duration": 1,
-    "next": ["tower_banana_识别结算","tower_banana_喂豆气流2"]
-    },
-    "tower_banana_喂豆气流2": {
-    "action": "swipe",
-    "begin": [723,1020],
-    "end": [972,548],
-    "pre_delay": 0,
-    "post_delay": 0,
-    "duration": 100,
-    "next": ["tower_banana_识别结算","tower_banana_划飞弹3"]
-    },
-    "tower_banana_划飞弹3": {
-    "action": "swipe",
-    "begin": [1360,649],
-    "end": [1744,685],
-    "repeat": 11,
-    "pre_delay": 0,
-    "post_delay": 0,
-    "repeat_delay": 0,
-    "duration": 1,
-    "next": ["tower_banana_识别结算","tower_banana_点波2"]
+        "action": "Swipe",
+        "begin": [
+            723,
+            1020
+        ],
+        "end": [
+            972,
+            548
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "tower_banana_识别结算",
+            "tower_banana_点波2"
+        ]
     },
     "tower_banana_点波2": {
-    "action": "click",
-    "target": [1837,325],
-    "repeat": 40,
-    "pre_delay": 0,
-    "post_delay": 0,
-    "repeat_delay": 1,
-    "next": ["tower_banana_识别结算","tower_banana_划飞弹4"]
-    },
-    
-    "tower_banana_划飞弹4": {
-    "action": "swipe",
-    "begin": [1360,649],
-    "end": [1744,685],
-    "repeat": 11,
-    "pre_delay": 0,
-    "post_delay": 0,
-    "repeat_delay": 0,
-    "duration": 1,
-    "next": ["tower_banana_识别结算","tower_banana_点波3"]
-    },
-    "tower_banana_点波3": {
-    "action": "click",
-    "target": [1837,325],
-    "repeat": 30,
-    "pre_delay": 0,
-    "post_delay": 0,
-    "repeat_delay": 0,
-    "next": ["tower_banana_识别结算","tower_banana_划飞弹5"]
-    },
-    "tower_banana_划飞弹5": {
-    "action": "swipe",
-    "begin": [1360,649],
-    "end": [1744,685],
-    "repeat": 250,
-    "pre_delay": 0,
-    "post_delay": 0,
-    "repeat_delay": 0,
-    "duration": 1,
-    "next": ["tower_banana_识别结算","tower_banana_识别开始战斗","tower_banana_识别boss关","tower_banana_喂豆气流"]
+        "action": "Click",
+        "target": [
+            1837,
+            325
+        ],
+        "repeat": 60,
+        "pre_delay": 2000,
+        "post_delay": 0,
+        "repeat_delay": 1,
+        "next": [
+            "tower_banana_识别结算",
+            "tower_banana_喂豆气流"
+        ]
     }
 }
