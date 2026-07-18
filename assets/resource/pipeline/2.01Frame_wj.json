@@ -1095,7 +1095,7 @@
         "post_delay": 0,
         "timeout": -1,
         "next": [
-            "frame_wj_boss_相机神器_复制1"
+            "frame_wj_boss_过渡"
         ]
     },
     "frame_wj_boss_相机神器_复制1": {
@@ -1158,8 +1158,7 @@
         "post_delay": 0,
         "timeout": -1,
         "next": [
-            "frame_wj_boss_过渡_相机神器2",
-            "frame_wj_boss_判断是否开启相机神器"
+            "frame_wj_boss_识别结算"
         ]
     },
     "frame_wj_boss_过渡_相机神器2": {

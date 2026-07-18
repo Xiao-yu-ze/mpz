@@ -14,7 +14,7 @@
                 "小关是否加速",
                 "fw_boss关是否加速",
                 "fw_boss_补给智能选取",
-                "fw_boss_是否开相机神器",
+                //"fw_boss_是否开相机神器",
                 "是否魔甘收尾(牢玩家专属)"
             ]
         }
@@ -84,6 +84,7 @@
         "fw_boss_是否开相机神器": {
             "type": "switch",
             "label": "boss关是否开相机神器复原植物",
+            "description": "开启此功能默认关闭boss关加速",
             "cases": [
                 {
                     "name": "No",
@@ -105,6 +106,9 @@
                     "name": "Yes",
                     "label": "是",
                     "pipeline_override": {
+                        "frame_wj_boss_判断是否进入关内": {
+                            "action": "DoNothing"
+                        },
                         "frame_wj_boss_喂豆5-3": {
                             "next": [
                                 "frame_wj_boss_过渡_相机神器2",
