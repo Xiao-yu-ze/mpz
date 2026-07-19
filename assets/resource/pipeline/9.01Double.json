@@ -956,6 +956,30 @@
       "double_123"
     ]
   },
+  "double_官方渠道(共存,有实名)": {
+    "action": "StartApp",
+    "package": "com.popcap.pvz2cthdbl",
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_官方渠道(非共存,有实名)": {
+    "action": "StartApp",
+    "package": "com.popcap.pvz2cthdbk",
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
+  "double_官方渠道(bk001,非共存,有实名)": {
+    "action": "StartApp",
+    "package": "com.popcap.pvz2cthdbk001",
+    "pre_delay": 4000,
+    "next": [
+      "double_123"
+    ]
+  },
   "double_taptap": {
     "action": "StartApp",
     "package": "com.popcap.pvz2cthdbk",

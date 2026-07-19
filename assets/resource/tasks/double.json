@@ -172,23 +172,56 @@
                     }
                 },
                 {
-                    "name": "taptap",
-                    "label": "taptap",
-                    "pipeline_override": {
-                        "double_退出1": {
-                            "next": [
-                                "double_taptap"
-                            ]
-                        }
-                    }
-                },
-                {
                     "name": "官渠",
                     "label": "官渠",
                     "pipeline_override": {
                         "double_退出1": {
                             "next": [
                                 "double_官方渠道"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "官渠(共存,有实名)",
+                    "label": "官渠(共存,有实名)",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_官方渠道(共存,有实名)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "官渠(非共存,有实名)",
+                    "label": "官渠(非共存,有实名)",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_官方渠道(非共存,有实名)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "官渠(bk001,共存,有实名)",
+                    "label": "官渠(bk001,共存,有实名)",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_官方渠道(bk001,非共存,有实名)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "taptap",
+                    "label": "taptap",
+                    "pipeline_override": {
+                        "double_退出1": {
+                            "next": [
+                                "double_taptap"
                             ]
                         }
                     }
