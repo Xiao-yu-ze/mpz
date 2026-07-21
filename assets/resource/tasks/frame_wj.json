@@ -7,7 +7,8 @@
             "option": [
                 "fw_初始化卡槽和草坪位置",
                 "小关是否喂豆",
-                "全局是否抛花",
+                "小关是否抛花",
+                "boss关是否抛花",
                 "fw_boss关是否需要喂豆",
                 "是否需要补植物",
                 "是否需要点波",
@@ -15,6 +16,7 @@
                 "fw_boss关是否加速",
                 "fw_boss_补给智能选取",
                 //"fw_boss_是否开相机神器",
+                "fw_boss_从boss关选卡界面开始",
                 "是否魔甘收尾(牢玩家专属)"
             ]
         }
@@ -53,6 +55,29 @@
                         "plant_初始化完毕": {
                             "next": [
                                 "frame_wj_过渡"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "fw_boss_从boss关选卡界面开始": {
+            "type": "switch",
+            "label": "从boss关选卡界面开始",
+            "description": "当前关卡为boss关,但是手动选了补给但是又不想自己打boss,就打开此功能",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "plant_初始化完毕": {
+                            "next": [
+                                "frame_wj_boss_识别开始"
                             ]
                         }
                     }
